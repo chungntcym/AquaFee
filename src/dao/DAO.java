@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DAO {
-	private String jdbcUrl = "jdbc:mysql://localhost:3306/waterman?serverTimezone=UTC&allowMultiQueries=true";
+	private String jdbcUrl = "jdbc:mysql://localhost:3306/aquaman?serverTimezone=UTC&allowMultiQueries=true";
 	private String jdbcUsername = "root";
-	private String jdbcPassword = "";
+	private String jdbcPassword = "root";
 	
 	public DAO() {
 	}
