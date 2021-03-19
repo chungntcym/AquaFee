@@ -67,7 +67,7 @@
 			$('#contract-type-select').bind('change', function() {
 				var val = $(this).val(); // get selected value
 				if (val) { // require a URL
-					window.location = "gdBangGia.jsp?id=" + val; // redirect
+					window.location = "GDBangGia.jsp?id=" + val; // redirect
 				}
 				return false;
 			});

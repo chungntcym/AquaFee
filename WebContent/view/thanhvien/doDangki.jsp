@@ -13,9 +13,9 @@
 	session.setAttribute("employee", employee);
 	boolean result = employeeDAO.checkSignup(employee);
 	if (result == true) {
-		response.sendRedirect("gdDangnhap.jsp?message=good");
+		response.sendRedirect("GDDangnhap.jsp?message=good");
 	} else {
-		response.sendRedirect("gdDangki.jsp?message=dup");
+		response.sendRedirect("GDDangki.jsp?message=dup");
 	}
 	System.out.println(result);
 %>

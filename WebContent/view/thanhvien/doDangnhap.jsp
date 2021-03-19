@@ -12,11 +12,11 @@
 		session.setAttribute("employee", result);
 		//Neu nguoi dang nhap la nhan vien ghi so dien
 		if(result.getPosition().equals("quan_ly")){
-			response.sendRedirect("../ql/gdChinhNVQuanly.jsp");
+			response.sendRedirect("../ql/GDChinhNVQuanly.jsp");
 		}
 		//Neu nguoi dang nhap la nhan vien
 		if(result.getPosition().equals("nhan_vien")){
-			response.sendRedirect("../thuthu/gdChinhNhanvien.jsp");
+			response.sendRedirect("../thuthu/GDChinhNhanvien.jsp");
 		}
 	}
 	else{
