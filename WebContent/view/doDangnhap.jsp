@@ -9,7 +9,7 @@
     nv.setPassword(password);
  
     EmployeeDAO dao = new EmployeeDAO();
-    boolean kq = dao.checkLogin(nv);
+    boolean kq = dao.checkSignin(nv);
      
     if(kq && (nv.getPosition().equalsIgnoreCase("quan_ly"))){
         session.setAttribute("quan_ly", nv);
