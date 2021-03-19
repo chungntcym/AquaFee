@@ -16,11 +16,11 @@
 		}
 		//Neu nguoi dang nhap la nhan vien
 		if(result.getPosition().equals("nhan_vien")){
-			response.sendRedirect("../thuthu/GDChinhNhanvien.jsp");
+			response.sendRedirect("../nhanvien/GDChinhNhanvien.jsp");
 		}
 	}
 	else{
 		//Sai mat khau
-		response.sendRedirect("gdDangnhap.jsp?message=wrongPass");
+		response.sendRedirect("GDDangnhap.jsp?message=wrongPass");
 	}
 %>

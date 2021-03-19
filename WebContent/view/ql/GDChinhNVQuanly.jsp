@@ -10,7 +10,7 @@
 <jsp:include page="../include.jsp" />
 <!--Custom styles-->
 <link rel="stylesheet" href="../vendor/css/main_view.css">
-<title>Aquaman - Quan li</title>
+<title>Aquaman - Quản lí</title>
 </head>
 
 <body>

@@ -11,7 +11,7 @@
 <jsp:include page="../include.jsp" />
 <!--Custom styles-->
 <link rel="stylesheet" href="../vendor/css/main_view.css">
-<title>Library - Reader</title>
+<title>Chọn loại hợp đồng</title>
 <%
 	ContractTypeDAO contractTypeDAO = new ContractTypeDAO();
 	ArrayList<ContractType> listContractTypes = contractTypeDAO.getAllContractType();

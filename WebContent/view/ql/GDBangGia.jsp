@@ -11,7 +11,7 @@
 <jsp:include page="../include.jsp" />
 <!--Custom styles-->
 <link rel="stylesheet" href="../vendor/css/main_view.css">
-<title>Library - Reader</title>
+<title>Bảng giá</title>
 <%
 int id = Integer.parseInt(request.getParameter("id"));
 ContractType contractType = new ContractType();
