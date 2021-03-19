@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.ArrayList, model.*, dao.*"%>
 <%ArrayList<TKContract> listyc = new ArrayList<TKContract>();
-<<<<<<< HEAD
 listyc = (new TKContractDAO()).getAllContract();%>
-=======
 TKContractDAO tkdao = new TKContractDAO();
 listyc = tkdao.getAllContract();%>
->>>>>>> origin/main
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,12 +26,9 @@ tr:nth-child(even) {
 }
 </style>
 <title>Thống kê hợp đồng</title>
-<<<<<<< HEAD
 <%@include file ="../include.jsp" %>
 </head>
 <body>
-<h3>Thống kê lượt mượn độc giả</h3>
-=======
 <%//@include file ="../include.jsp" %>
 </head>
 <body>
