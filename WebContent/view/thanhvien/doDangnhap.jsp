@@ -9,14 +9,14 @@
 	Employee employee = new Employee(username,password);
 	Employee result = employeeDAO.checkSignin(employee);
 	if(result != null){
-		session.setAttribute("member", result);
+		session.setAttribute("employee", result);
 		//Neu nguoi dang nhap la nhan vien ghi so dien
 		if(result.getPosition().equals("quan_ly")){
-			response.sendRedirect("../thuthu/gdChinhThuthu.jsp");
+			response.sendRedirect("../ql/gdChinhNVQuanly.jsp");
 		}
 		//Neu nguoi dang nhap la nhan vien
 		if(result.getPosition().equals("nhan_vien")){
-			response.sendRedirect("../thuthu/gdChinhThuthu.jsp");
+			response.sendRedirect("../thuthu/gdChinhNhanvien.jsp");
 		}
 	}
 	else{
