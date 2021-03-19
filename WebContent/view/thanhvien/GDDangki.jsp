@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	Member member = (Member) session.getAttribute("member");
+	Employee employee = (Employee) session.getAttribute("employee");
 %>
 <!DOCTYPE html>
 <html lang="vi">
@@ -48,8 +48,8 @@
 									<span class="input-group-text"><i class="fas fa-user"></i></span>
 								</div>
 								<input type="text" class="form-control" name="fullname"
-									placeholder="fullname" <%if (member != null) {%>
-									value="<%=member.getFullname()%>" <%}%> required>
+									placeholder="fullname" <%if (employee != null) {%>
+									value="<%=employee.getFullname()%>" <%}%> required>
 							</div>
 						</div>
 						<div class="row">
@@ -58,8 +58,8 @@
 									<span class="input-group-text"><i class="fas fa-key"></i></span>
 								</div>
 								<input type="date" class="form-control" name="dateofbirth"
-									placeholder="DOB" <%if (member != null) {%>
-									value="<%=member.getDateofbirth().toString()%>" <%}%>
+									placeholder="DOB" <%if (employee != null) {%>
+									value="<%=employee.getAddress()%>" <%}%>
 									required>
 							</div>
 							<div class="input-group form-group col-6">
@@ -67,47 +67,8 @@
 									<span class="input-group-text"><i class="fas fa-user"></i></span>
 								</div>
 								<input type="email" class="form-control" name="email"
-									placeholder="email" <%if (member != null) {%>
-									value="<%=member.getEmail()%>" <%}%> required>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-group form-group col-6">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fas fa-key"></i></span>
-								</div>
-								<input type="text" class="form-control" name="phone"
-									placeholder="phone" <%if (member != null) {%>
-									value="<%=member.getPhone()%>" <%}%> required>
-							</div>
-							<div class="input-group form-group col-6">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fas fa-user"></i></span>
-								</div>
-								<input type="text" class="form-control" name="securityid"
-									placeholder="securityid" <%if (member != null) {%>
-									value="<%=member.getSecurityId()%>" <%}%> required>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-group form-group col-6">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fas fa-key"></i></span>
-								</div>
-								<input type="text" class="form-control" name="address"
-									placeholder="address" <%if (member != null) {%>
-									value="<%=member.getAddress()%>" <%}%> required>
-							</div>
-							<div class="input-group form-group col-6">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fas fa-user"></i></span>
-								</div>
-								<select class="form-control" name="gender" required>
-									<option value="" disabled selected>Gender</option>
-									<option>male</option>
-									<option>female</option>
-									<option>other</option>
-								</select>
+									placeholder="email" <%if (employee != null) {%>
+									value="<%=employee.getPhonenumber()%>" <%}%> required>
 							</div>
 						</div>
 						<div class="form-group">
