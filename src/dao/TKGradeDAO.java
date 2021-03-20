@@ -28,10 +28,10 @@ public class TKGradeDAO extends DAO {
 				grade.setGrade(resultSet.getInt("grade"));
 				grade.setValue(resultSet.getInt("value"));
 				grade.setPrice(resultSet.getFloat("price"));
-				grade.setStartDate(resultSet.getDate("startDate"));
+				grade.setStartDate(resultSet.getTimestamp("startDate"));
 				grade.setLoaihopdong(resultSet.getString("type"));
 				listGrade.add(grade);
-			}
+			}	
 			return listGrade;
 		}catch (SQLException e) {
 			e.printStackTrace();
