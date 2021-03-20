@@ -14,6 +14,7 @@
 <title>Bảng giá</title>
 <%
 int id = Integer.parseInt(request.getParameter("id"));
+session.setAttribute("contractTypeId", id);
 ContractType contractType = new ContractType();
 ArrayList<ContractType> listContractTypes = (ArrayList<ContractType>) session.getAttribute("listContractType");
 for (ContractType ct : listContractTypes) {
@@ -39,56 +40,110 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 
 			<div class="container-fluid">
 				<!-- Code in here -->
-				<div class="card mt-3">
-					<div class="card-header d-flex justify-content-between">
-						<div class="my-auto">
-							Bảng giá cho
-							<%=contractType.getType()%></div>
-					</div>
-					<div class="card-body">
-						<form>
-							<table class="table">
+				<form method="POST" action="doSaveBangGia.jsp">
+					<div class="card mt-3">
+						<div class="card-header d-flex justify-content-between">
+							<div class="my-auto">
+								Bảng giá cho
+								<%=contractType.getType()%></div>
+							<div>
+								<button id="add-row" type="button"
+									class="btn btn-outline-secondary px-3">Thêm</button>
+							</div>
+						</div>
+						<div class="card-body">
+
+							<table id="grade-table" class="table">
 								<thead>
 									<tr>
-										<th scope="col">Bậc</th>
-										<th scope="col">Ngưỡng</th>
-										<th scope="col">Giá</th>
-										<th scope="col">Hành động</th>
+										<th scope="col" style="width: 15%">Bậc</th>
+										<th scope="col" data-toggle="tooltip" data-placement="right"
+											title="Là ngưỡng mà khi lượng nước dùng đến giá trị này thì mức giá tương ứng sẽ được áp dụng">
+											Ngưỡng <span class="ml-2 my-0"><i
+												class="fa fa-info-circle text-info"></i></span>
+										</th>
+										<th scope="col">Giá (đ)</th>
+										<th scope="col" class="text-center" style="width: 8.33%">Hành
+											động</th>
 									</tr>
 								</thead>
 								<tbody>
+									<%
+									if (listGrade.size() == 0) {
+									%>
+									<tr>
+										<td>
+											<div class="form-group">
+												<input type="text" name="grade"
+													class="form-control grade-input" value="1" readonly>
+											</div>
+										</td>
+										<td>
+											<div class="form-group">
+												<input type="number" name="value"
+													class="form-control value-field" value="0" readonly>
+											</div>
+										</td>
+										<td>
+											<div class="form-group">
+												<input type="number" name="price" class="form-control"
+													required>
+											</div>
+										</td>
+										<td class="d-flex justify-content-center"></td>
+									</tr>
+									<%
+									} else {
+									%>
 									<%
 									for (Grade grade : listGrade) {
 									%>
 									<tr>
 										<td>
 											<div class="form-group">
-												<input type="text" class="form-control"
-													value=<%=grade.getGrade()%>>
+												<input type="text" name="grade"
+													class="form-control grade-input"
+													value=<%=grade.getGrade()%> readonly>
 											</div>
 										</td>
 										<td>
 											<div class="form-group">
-												<input type="text" class="form-control"
-													value=<%=grade.getValue()%>>
+												<input type="number" name="value"
+													class="form-control value-field"
+													value=<%=grade.getGrade() == 1 ? 0 : grade.getValue()%>
+													<%=grade.getGrade() == 1 ? "readonly" : ""%>>
 											</div>
 										</td>
 										<td>
 											<div class="form-group">
-												<input type="text" class="form-control"
-													value=<%=grade.getPrice()%>>
+												<input type="number" name="price" class="form-control"
+													value=<%=grade.getPrice()%> required>
 											</div>
+										</td>
+										<td class="d-flex justify-content-center">
+											<%
+											if (grade.getGrade() != 1) {
+											%>
+											<button class="btn btn-outline-danger btnDelete"
+												type="button">
+												<i class="fa fa-times"></i>
+											</button> <%
+ }
+ %>
 										</td>
 									</tr>
 									<%
 									}
+									}
 									%>
 								</tbody>
 							</table>
-						</form>
+						</div>
+						<div class="card-footer d-flex justify-content-end">
+							<button class="btn btn-outline-secondary px-4" type="submit">Lưu</button>
+						</div>
 					</div>
-				</div>
-
+				</form>
 			</div>
 		</div>
 		<!-- /#page-content-wrapper -->
@@ -106,6 +161,67 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 				return false;
 			});
 		});
+
+		$("#grade-table").on('click', '.btnDelete', function() {
+			$(this).closest('tr').remove();
+			autoNumber();
+		});
+
+		$(document).on('focusout', '.value-field', function() {
+			sortTable();
+			autoNumber();
+		});
+
+		function autoNumber() {
+			$('#grade-table .grade-input').each(function(i) {
+				$(this).val(i + 1);
+			});
+		}
+
+		$("#add-row")
+				.click(
+						function() {
+							markup = "<tr><td><div class='form-group'><input type='text' name='grade'class='form-control grade-input' readonly></div></td><td><div class='form-group'><input type='number' name='value' class='form-control value-field' required></div></td><td><div class='form-group'><input type='number' name='price' class='form-control' required></div></td><td class='d-flex justify-content-center'><button class='btn btn-outline-danger btnDelete' type='button'><i class='fa fa-times'></i></button></td></tr>";
+							tableBody = $("#grade-table tbody");
+							tableBody.append(markup);
+							autoNumber();
+						});
+
+		function sortTable() {
+			var table, rows, switching, i, x, y, shouldSwitch;
+			table = document.getElementById("grade-table");
+			switching = true;
+			/* Make a loop that will continue until
+			no switching has been done: */
+			while (switching) {
+				// Start by saying: no switching is done:
+				switching = false;
+				rows = table.rows;
+				/* Loop through all table rows (except the
+				first, which contains table headers): */
+				for (i = 1; i < (rows.length - 1); i++) {
+					// Start by saying there should be no switching:
+					shouldSwitch = false;
+					/* Get the two elements you want to compare,
+					one from current row and one from the next: */
+					x = rows[i].getElementsByTagName("input")[1].value;
+					y = rows[i + 1].getElementsByTagName("input")[1].value;
+
+					// Check if the two rows should switch place:
+					if (parseInt(x) > parseInt(y)) {
+						// If so, mark as a switch and break the loop:
+						shouldSwitch = true;
+						break;
+					}
+				}
+				if (shouldSwitch) {
+					/* If a switch has been marked, make the switch
+					and mark that a switch has been done: */
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					switching = true;
+				}
+			}
+		}
 	</script>
 </body>
 </html>

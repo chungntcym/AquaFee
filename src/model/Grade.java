@@ -1,6 +1,6 @@
 package model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Grade {
 
@@ -8,9 +8,9 @@ public class Grade {
 	private int grade;
 	private int value;
 	private float price;
-	private Date startDate;
+	private Timestamp startDate;
 	
-	public Grade(int id, int grade, int value, float price, Date startDate) {
+	public Grade(int id, int grade, int value, float price, Timestamp startDate) {
 		super();
 		this.id = id;
 		this.grade = grade;
@@ -55,11 +55,11 @@ public class Grade {
 		this.price = price;
 	}
 
-	public Date getStartDate() {
+	public Timestamp getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(Timestamp startDate) {
 		this.startDate = startDate;
 	}
 		

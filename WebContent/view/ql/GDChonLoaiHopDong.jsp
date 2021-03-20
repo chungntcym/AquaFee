@@ -39,7 +39,7 @@
 						<div class="form-group">
 							<label for="contract-type-select">Chọn loại hợp đồng</label> <select
 								class="form-control" id="contract-type-select">
-								<option value=" " disabled selected> </option>
+								<option value="default" disabled selected> </option>
 								<%
 								if(listContractTypes != null){
 									for(ContractType contractType : listContractTypes){ 
@@ -64,6 +64,8 @@
 	<!-- /#wrapper -->
 	<script type="text/javascript">
 		$(function() {
+			$('#contract-type-select').val("deafault");
+			
 			$('#contract-type-select').bind('change', function() {
 				var val = $(this).val(); // get selected value
 				if (val) { // require a URL
