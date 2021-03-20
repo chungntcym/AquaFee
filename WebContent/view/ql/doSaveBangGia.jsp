@@ -11,7 +11,7 @@ ArrayList<Grade> listGrade = new ArrayList<>();
 int contractTypeId = Integer.parseInt(session.getAttribute("contractTypeId").toString());
 
 Date date = new Date();
-java.sql.Date startDate = new java.sql.Date(date.getTime());
+java.sql.Timestamp startDate = new java.sql.Timestamp(date.getTime());
 
 
 for (int i = 0; i < grade.length; i++) {

@@ -52,7 +52,7 @@ public class GradeDAO extends DAO {
 				preparedStatement.setInt(1, grade.getGrade());
 				preparedStatement.setInt(2, grade.getValue());
 				preparedStatement.setFloat(3, grade.getPrice());
-				preparedStatement.setDate(4, grade.getStartDate());
+				preparedStatement.setTimestamp(4, grade.getStartDate());
 				preparedStatement.setInt(5, contractTypeId);
 				preparedStatement.addBatch();
 				;
