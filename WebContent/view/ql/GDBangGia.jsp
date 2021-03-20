@@ -40,7 +40,7 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 
 			<div class="container-fluid">
 				<!-- Code in here -->
-				<form method="POST" action="doSaveBangGia.jsp">
+				<form id="grade-form" method="POST" action="doSaveBangGia.jsp">
 					<div class="card mt-3">
 						<div class="card-header d-flex justify-content-between">
 							<div class="my-auto">
@@ -150,6 +150,27 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 
 	</div>
 	<!-- /#wrapper -->
+
+	<!-- Dup value modal -->
+	<div class="modal fade" id="dup-value-modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Ngưỡng nhập không hợp lệ</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Các ngưỡng không được trùng nhau, vui lòng sửa lại</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Đóng</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script type="text/javascript">
 		$(function() {
 			$('#contract-type-select').bind('change', function() {
@@ -222,6 +243,26 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 				}
 			}
 		}
+
+		$("#grade-form").submit(function() {
+			var table, rows;
+			table = document.getElementById("grade-table");
+			rows = table.rows;
+			for (i = 1; i < (rows.length - 1); i++) {
+				/* Get the two elements you want to compare,
+				one from current row and one from the next: */
+				x = rows[i].getElementsByTagName("input")[1].value;
+				y = rows[i + 1].getElementsByTagName("input")[1].value;
+
+				// Check if the two rows has the same value:
+				if (parseInt(x) == parseInt(y)) {
+					// If so, return as fail:
+					$("#dup-value-modal").modal();
+					return false;
+				}
+			}
+			return true;
+		});
 	</script>
 </body>
 </html>

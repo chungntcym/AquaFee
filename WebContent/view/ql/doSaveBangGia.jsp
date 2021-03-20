@@ -23,9 +23,9 @@ GradeDAO gradeDAO = new GradeDAO();
 
 boolean result = gradeDAO.saveGradeTable(listGrade, contractTypeId);
 if(result == true){
-	response.sendRedirect("GDChinhNVQuanly.jsp?good");
+	response.sendRedirect("GDChinhNVQuanly.jsp?result=gradeSuccess");
 }
 else{
-	response.sendRedirect("GDChinhNVQuanly.jsp?bad");
+	response.sendRedirect("GDChinhNVQuanly.jsp?result=gradeFail");
 }
 %>
