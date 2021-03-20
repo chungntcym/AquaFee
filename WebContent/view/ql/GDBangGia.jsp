@@ -13,7 +13,14 @@
 <link rel="stylesheet" href="../vendor/css/main_view.css">
 <title>Bảng giá</title>
 <%
-int id = Integer.parseInt(request.getParameter("id"));
+String idString = request.getParameter("id");
+int id = 0;
+if (idString != null) {
+	id = Integer.parseInt(idString);
+} else {
+	response.sendRedirect("GDChinhNVQuanly.jsp");
+}
+
 session.setAttribute("contractTypeId", id);
 ContractType contractType = new ContractType();
 ArrayList<ContractType> listContractTypes = (ArrayList<ContractType>) session.getAttribute("listContractType");
@@ -141,6 +148,8 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 						</div>
 						<div class="card-footer d-flex justify-content-end">
 							<button class="btn btn-outline-secondary px-4" type="submit">Lưu</button>
+							<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay
+								lại</button>
 						</div>
 					</div>
 				</form>
@@ -152,18 +161,20 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 	<!-- /#wrapper -->
 
 	<!-- Dup value modal -->
-	<div class="modal fade" id="dup-value-modal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="dup-value-modal" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Ngưỡng nhập không hợp lệ</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Ngưỡng nhập
+						không hợp lệ</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">Các ngưỡng không được trùng nhau, vui lòng sửa lại</div>
+				<div class="modal-body">Các ngưỡng không được trùng nhau, vui
+					lòng sửa lại</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">Đóng</button>
