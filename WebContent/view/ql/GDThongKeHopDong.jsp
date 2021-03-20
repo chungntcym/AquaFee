@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.ArrayList, model.*, dao.*"%>
-<%ArrayList<TKContract> listyc = new ArrayList<TKContract>();
-listyc = (new TKContractDAO()).getAllContract();%>
+<%ArrayList<TKContract> listyc = new ArrayList<TKContract>(); listyc = (new TKContractDAO()).getAllContract();%>
 <!DOCTYPE html>
 <html>
 <head>
