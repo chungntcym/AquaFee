@@ -100,7 +100,9 @@
 									%>
 								</tbody>
 							</table>
-							<button type="button" name="back" onclick="history.back()">Quay lại</button>
+							<div class="card-footer d-flex justify-content-end">
+								<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay lại</button>
+							</div>
 						</form>
 					</div>
 				</div>

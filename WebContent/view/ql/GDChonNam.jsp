@@ -39,11 +39,14 @@
 						<table>
 						    <tr>
 						        <td>
-						            <input type="date" id="date-input" name="date-input">
-						            <button onclick= "myFunction()">Xem bảng giá</button>
+						            <input class="w3-input" type="date" id="date-input" name="date-input">
+						            <button class="btn btn-outline-secondary px-4" type="button" name="submit" onclick= "myFunction()">Xem bảng giá</button>
 						        <td>
 						    </tr>
 						</table>
+						<div class="card-footer d-flex justify-content-end">
+							<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay lại</button>
+						</div>
 					</div>
 				</div>
 

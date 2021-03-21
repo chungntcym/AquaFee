@@ -70,8 +70,7 @@ if (listyc != null) {
 								</tbody>
 							</table>
 							<div class="card-footer d-flex justify-content-end">
-								<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay
-									lại</button>
+								<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay lại</button>
 							</div>
 						</form>
 					</div>

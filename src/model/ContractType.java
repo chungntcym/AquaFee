@@ -1,6 +1,8 @@
 package model;
 
-public class ContractType {
+import java.io.Serializable;
+
+public class ContractType implements Serializable{
 
 	private int id;
 	private String type;
