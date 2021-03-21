@@ -44,14 +44,14 @@
 					</div>
 					<div class="card-body">
 						<form>
-							<table class="table">
+						<table class="table">
 								<thead>
 									<tr>
-										<th scope="col">Bậc</th>
-										<th scope="col">Hạn mức (m3/người)</th>
-										<th scope="col">Giá (đồng)</th>
-										<th scope="col">Ngày bắt đầu</th>
-										<th scope="col-md-4">Loại hợp đồng</th>
+										<th>Bậc</th>
+										<th>Hạn mức (m3/người)</th>
+										<th>Giá (đồng)</th>
+										<th>Ngày bắt đầu</th>
+										<th>Loại hợp đồng</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -59,37 +59,11 @@
 									for (TKGrade grade : list) {
 									%>
 									<tr>
-										<td>
-											<div class="form-group">
-												<input type="text" class="form-control" disabled="disabled"
-													value=<%=grade.getGrade()%>>
-											</div>
-										</td>
-										<td>
-											<div class="form-group">
-												<input type="text" class="form-control" disabled="disabled"
-													value=<%=grade.getValue()%>>
-											</div>
-										</td>
-										<td>
-											<div class="form-group">
-												<input type="text" class="form-control" disabled="disabled"
-													value=<%=grade.getPrice()%>>
-											</div>
-										</td>
-										<td>
-											<div class="form-group">
-												<input type="text" class="form-control" disabled="disabled"
-													value=<%=grade.getStartDate()%>>
-											</div>
-										</td>
-										<td>
-											<div class="form-group">
-												<input type="text" class="form-control" disabled="disabled"
-													<%String loaihopdong = grade.getLoaihopdong(); %>
-													value=<%=loaihopdong %>>
-											</div>
-										</td>
+										<td><%=grade.getGrade()%></td>
+										<td><%=grade.getValue()%></td>
+										<td><%=grade.getPrice()%></td>
+										<td><%=grade.getStartDate()%></td>
+										<td><%=grade.getLoaihopdong()%></td>
 									</tr>
 									<%
 									}
