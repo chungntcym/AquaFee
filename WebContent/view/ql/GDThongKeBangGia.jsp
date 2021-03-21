@@ -62,7 +62,10 @@
 										<td><%=grade.getGrade()%></td>
 										<td><%=grade.getValue()%></td>
 										<td><%=grade.getPrice()%></td>
-										<td><%=grade.getStartDate()%></td>
+										<td>
+										<%SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
+										String startDate = format1.format(grade.getStartDate());%>
+										<%=startDate%></td>
 										<td><%=grade.getLoaihopdong()%></td>
 									</tr>
 									<%

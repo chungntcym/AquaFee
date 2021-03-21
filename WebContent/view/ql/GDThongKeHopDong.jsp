@@ -41,13 +41,14 @@ if (listyc != null) {
 							<table class="table">
 								<thead>
 									<tr>
-										<th>T.T</th>
+										<th>ID</th>
 										<th>Họ và tên</th>
 										<th>Địa chỉ</th>
 										<th>Số điện thoại</th>
 										<th>Số CMND/CCCD</th>
 										<th>Email</th>
 										<th>Loại hợp đồng</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -55,13 +56,18 @@ if (listyc != null) {
 									for (int i = 0; i < listyc.size(); i++) {
 									%>
 									<tr>
-										<td><%=listyc.get(i).getId()%></td>
+										<td name="id"><%=listyc.get(i).getId()%></td>
 										<td><%=listyc.get(i).getFullname()%></td>
 										<td><%=listyc.get(i).getAddress()%></td>
 										<td><%=listyc.get(i).getPhonenumber()%></td>
 										<td><%=listyc.get(i).getIdentityNumber()%></td>
 										<td><%=listyc.get(i).getEmail()%></td>
 										<td><%=listyc.get(i).getLoaihopdong()%></td>
+										<td>
+										<button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="left"
+											title="Xem hoá đơn">
+											<i class="fas fa-receipt"></i>
+										</button></td>
 									</tr>
 									<%
 									}
