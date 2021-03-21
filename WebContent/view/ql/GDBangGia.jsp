@@ -147,7 +147,7 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 							</table>
 						</div>
 						<div class="card-footer d-flex justify-content-end">
-							<button class="btn btn-outline-secondary px-4" type="submit">Lưu</button>
+							<button class="btn btn-outline-secondary px-4 mx-2" type="submit">Lưu</button>
 							<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay
 								lại</button>
 						</div>
