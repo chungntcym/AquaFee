@@ -80,14 +80,13 @@
 										<td>
 											<div class="form-group">
 												<input type="text" class="form-control" disabled="disabled"
-													value=<%=grade.getStartDate()%>>
+													value="<%=grade.getStartDate()%>">
 											</div>
 										</td>
 										<td>
 											<div class="form-group">
 												<input type="text" class="form-control" disabled="disabled"
-													<%String loaihopdong = grade.getLoaihopdong(); %>
-													value=<%=loaihopdong %>>
+													value="<%=grade.getLoaihopdong() %>">
 											</div>
 										</td>
 									</tr>
