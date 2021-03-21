@@ -44,7 +44,7 @@ ResultSet resultSet = paymentDAO.getTableGradeByContractTypeId();
 										<th>Địa chỉ</th>
 										<th>Loại hợp đồng</th>
 										<th>Chỉ số đồng hồ</th>
-										<th>Tiền</th>
+										<th>Tiền (đ)</th>
 										<th>Thời gian trả</th>
 									</tr>
 								</thead>
@@ -71,7 +71,7 @@ ResultSet resultSet = paymentDAO.getTableGradeByContractTypeId();
 							</table>
 							<div class="card-footer d-flex justify-content-end">
 								<button class="btn btn-outline-secondary px-4" type="button"
-									name="back" onclick="history.back()">Quay lại</button>
+									name="back" onclick="history.back	()">Quay lại</button>
 							</div>
 						</form>
 					</div>
