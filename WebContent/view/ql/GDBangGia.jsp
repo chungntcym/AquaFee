@@ -66,10 +66,10 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 										<th scope="col" style="width: 15%">Bậc</th>
 										<th scope="col" data-toggle="tooltip" data-placement="right"
 											title="Là ngưỡng mà khi lượng nước dùng đến giá trị này thì mức giá tương ứng sẽ được áp dụng">
-											Ngưỡng (m3)<span class="ml-2 my-0"><i
+											Ngưỡng (m3/người)<span class="ml-2 my-0"><i
 												class="fa fa-info-circle text-info"></i></span>
 										</th>
-										<th scope="col">Giá (đ)</th>
+										<th scope="col">Giá (đồng)</th>
 										<th scope="col" class="text-center" style="width: 8.33%">Hành
 											động</th>
 									</tr>

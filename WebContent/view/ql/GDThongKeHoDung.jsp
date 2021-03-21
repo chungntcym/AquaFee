@@ -44,7 +44,7 @@ ResultSet resultSet = paymentDAO.getTableGradeByContractTypeId();
 										<th>Địa chỉ</th>
 										<th>Loại hợp đồng</th>
 										<th>Chỉ số đồng hồ</th>
-										<th>Tiền (đ)</th>
+										<th>Tiền (đồng)</th>
 										<th>Thời gian trả</th>
 									</tr>
 								</thead>
