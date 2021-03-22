@@ -63,10 +63,42 @@
 										<td><%=grade.getValue()%></td>
 										<td><%=grade.getPrice()%></td>
 										<td>
+<<<<<<< HEAD
 										<%SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
 										String startDate = format1.format(grade.getStartDate());%>
 										<%=startDate%></td>
 										<td><%=grade.getLoaihopdong()%></td>
+=======
+											<div class="form-group">
+												<input type="text" class="form-control" disabled="disabled"
+													value=<%=grade.getGrade()%>>
+											</div>
+										</td>
+										<td>
+											<div class="form-group">
+												<input type="text" class="form-control" disabled="disabled"
+													value=<%=grade.getValue()%>>
+											</div>
+										</td>
+										<td>
+											<div class="form-group">
+												<input type="text" class="form-control" disabled="disabled"
+													value=<%=grade.getPrice()%>>
+											</div>
+										</td>
+										<td>
+											<div class="form-group">
+												<input type="text" class="form-control" disabled="disabled"
+													value="<%=grade.getStartDate()%>">
+											</div>
+										</td>
+										<td>
+											<div class="form-group">
+												<input type="text" class="form-control" disabled="disabled"
+													value="<%=grade.getLoaihopdong() %>">
+											</div>
+										</td>
+>>>>>>> origin/main
 									</tr>
 									<%
 									}
