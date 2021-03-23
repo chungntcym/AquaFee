@@ -55,9 +55,9 @@ ArrayList<Customer> listCustomer = customerDAO.getAll(String.valueOf(id));
 
 							<div>
 								<button id="check-all" type="button"
-									class="btn btn-outline-secondary px-1">Chọn tất cả</button>
+									class="btn btn-outline-secondary mx-1">Chọn tất cả</button>
 								<button id="un-check-all" type="button"
-									class="btn btn-outline-secondary px-1">Bỏ chọn</button>
+									class="btn btn-outline-secondary">Bỏ chọn</button>
 							</div>
 						</div>
 						<div class="card-body">
@@ -91,7 +91,7 @@ ArrayList<Customer> listCustomer = customerDAO.getAll(String.valueOf(id));
 							</table>
 						</div>
 						<div class="card-footer d-flex justify-content-end">
-							<button class="btn btn-outline-secondary px-3" type="submit">Soạn
+							<button class="btn btn-outline-secondary px-3 mx-2" type="submit">Soạn
 								tin</button>
 							<button class="btn btn-outline-secondary px-3" type="button"
 								name="back" onclick="history.back()">Quay lại</button>
