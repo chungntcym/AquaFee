@@ -13,7 +13,12 @@
 <jsp:include page="../include.jsp" />
 <!--Custom styles-->
 <style type="text/css">
-    <%@include file="../vendor/css/signup.css" %>
+<%@
+include
+ 
+file="../vendor/css/signup.css"
+ 
+%>
 </style>
 <title>Sign up</title>
 </head>
@@ -59,8 +64,7 @@
 								</div>
 								<input type="date" class="form-control" name="dateofbirth"
 									placeholder="DOB" <%if (employee != null) {%>
-									value="<%=employee.getAddress()%>" <%}%>
-									required>
+									value="<%=employee.getAddress()%>" <%}%> required>
 							</div>
 							<div class="input-group form-group col-6">
 								<div class="input-group-prepend">
@@ -93,13 +97,15 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLongTitle">This username has been taken</h5>
+					<h5 class="modal-title" id="exampleModalLongTitle">This
+						username has been taken</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">This username has been taken, please use other username</div>
+				<div class="modal-body">This username has been taken, please
+					use other username</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">Close</button>

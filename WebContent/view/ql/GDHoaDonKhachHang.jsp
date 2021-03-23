@@ -56,11 +56,10 @@ if (listyc != null) {
 									<tr>
 										<td><%=listyc.get(i).getId()%></td>
 										<td>
-										<%if (listyc.get(i).getPayment_time() == null){ %>
-										<strong style="color: red">Chưa thanh toán</strong>
-										<%}else{ %>
-										<%=listyc.get(i).getPayment_time()%>
-										<%} %></td>
+											<%if (listyc.get(i).getPayment_time() == null){ %> <strong
+											style="color: red">Chưa thanh toán</strong> <%}else{ %> <%=listyc.get(i).getPayment_time()%>
+											<%} %>
+										</td>
 										<td><%=listyc.get(i).getIssue_time()%></td>
 										<td><%=listyc.get(i).getWater_meter_value()%></td>
 										<td><%=listyc.get(i).getPrice()%></td>
@@ -72,7 +71,8 @@ if (listyc != null) {
 								</tbody>
 							</table>
 							<div class="card-footer d-flex justify-content-end">
-								<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay lại</button>
+								<button class="btn btn-outline-secondary px-4" type="button"
+									name="back" onclick="history.back()">Quay lại</button>
 							</div>
 						</form>
 					</div>

@@ -1,16 +1,16 @@
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.*, java.text.*, model.*, dao.*"%>
+	pageEncoding="UTF-8" import="java.util.*, java.text.*, model.*, dao.*"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Thống kê lịch sử giá nước</title>
-<%@include file ="../include.jsp" %>
+<%@include file="../include.jsp"%>
 <link rel="stylesheet" href="../vendor/css/main_view.css">
 </head>
 <body>
-<% 
+	<% 
 	String date = request.getParameter("id").toString();
 	if (date != null) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -20,9 +20,9 @@
 		ArrayList<TKGrade> list = new ArrayList<TKGrade>();
 		list = dao.getGradeByyear(year);
 		System.out.print(list);%>
-			
 
-<div class="d-flex" id="wrapper">
+
+	<div class="d-flex" id="wrapper">
 
 		<%@include file="menu.jsp"%>
 
@@ -44,7 +44,7 @@
 					</div>
 					<div class="card-body">
 						<form>
-						<table class="table">
+							<table class="table">
 								<thead>
 									<tr>
 										<th>Bậc</th>
@@ -59,16 +59,7 @@
 									for (TKGrade grade : list) {
 									%>
 									<tr>
-										<td><%=grade.getGrade()%></td>
-										<td><%=grade.getValue()%></td>
-										<td><%=grade.getPrice()%></td>
 										<td>
-<<<<<<< HEAD
-										<%SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
-										String startDate = format1.format(grade.getStartDate());%>
-										<%=startDate%></td>
-										<td><%=grade.getLoaihopdong()%></td>
-=======
 											<div class="form-group">
 												<input type="text" class="form-control" disabled="disabled"
 													value=<%=grade.getGrade()%>>
@@ -98,23 +89,23 @@
 													value="<%=grade.getLoaihopdong() %>">
 											</div>
 										</td>
->>>>>>> origin/main
 									</tr>
 									<%
 									}
 			}else {%>
-				<h3>Năm đã chọn chưa cấu hình bảng giá</h3>
-			<%}
+									<h3>Năm đã chọn chưa cấu hình bảng giá</h3>
+									<%}
 		}
 									%>
 								</tbody>
 							</table>
 							<div class="card-footer d-flex justify-content-end">
-								<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay lại</button>
+								<button class="btn btn-outline-secondary px-4" type="button"
+									name="back" onclick="history.back()">Quay lại</button>
 							</div>
 						</form>
 					</div>
 				</div>
-	<br>
+				<br>
 </body>
 </html>

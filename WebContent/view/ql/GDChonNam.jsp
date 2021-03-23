@@ -37,15 +37,17 @@
 					</div>
 					<div class="card-body">
 						<table>
-						    <tr>
-						        <td>
-						            <input class="w3-input" type="date" id="date-input" name="date-input">
-						            <button class="btn btn-outline-secondary px-4" type="button" name="submit" onclick= "myFunction()">Xem bảng giá</button>
-						        <td>
-						    </tr>
+							<tr>
+								<td><input class="w3-input" type="date" id="date-input"
+									name="date-input">
+									<button class="btn btn-outline-secondary px-4" type="button"
+										name="submit" onclick="myFunction()">Xem bảng giá</button>
+								<td>
+							</tr>
 						</table>
 						<div class="card-footer d-flex justify-content-end">
-							<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay lại</button>
+							<button class="btn btn-outline-secondary px-4" type="button"
+								name="back" onclick="history.back()">Quay lại</button>
 						</div>
 					</div>
 				</div>
@@ -53,7 +55,7 @@
 			</div>
 		</div>
 		<!-- /#page-content-wrapper -->
-	
+
 	</div>
 	<!-- /#wrapper -->
 	<script>

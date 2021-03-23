@@ -8,9 +8,14 @@
 <head>
 
 <jsp:include page="../include.jsp" />
-	<!--Custom styles-->
-	<style type="text/css">
-    <%@include file="../vendor/css/login.css" %>
+<!--Custom styles-->
+<style type="text/css">
+<%@
+include
+ 
+file="../vendor/css/login.css"
+ 
+%>
 </style>
 <title>Sign in</title>
 </head>
