@@ -1,10 +1,8 @@
 package model;
 
 public class Districts {
-
 	private int id;
 	private String name;
-	
 	public Districts(int id, String name) {
 		super();
 		this.id = id;
@@ -12,7 +10,6 @@ public class Districts {
 	}
 	public Districts() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;
@@ -26,5 +23,4 @@ public class Districts {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 }

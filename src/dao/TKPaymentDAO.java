@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class TKPaymentDAO extends DAO {
 
 	private static final String GET_PAYMENT_STATISTICAL	 = "SELECT * FROM  `tblpayment`, `tblcontracttype`, `tblcustomer` "
-			+ "WHERE tblcontracttype.id = tblcustomer.tblContractTypeid AND tblcustomer.id = tblCustomerid;";
+			+ "WHERE tblcontracttype.id = tblcustomer.tblContractTypeid AND tblcustomer.id = tblCustomerid AND tblpayment.payment_time IS NULL;";
 
 	public ResultSet getTableGradeByContractTypeId() throws SQLException {
 		try {

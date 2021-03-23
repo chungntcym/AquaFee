@@ -3,10 +3,18 @@ package model;
 public class SubDistrict {
 	private int id;
 	private String name;
-	public SubDistrict(int id, String name) {
+	private int idDistrict;
+	public SubDistrict(int id, String name,int idDistrict) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.idDistrict=idDistrict;
+	}
+	public int getIdDistrict() {
+		return idDistrict;
+	}
+	public void setIdDistrict(int idDistrict) {
+		this.idDistrict = idDistrict;
 	}
 	public SubDistrict() {
 		super();

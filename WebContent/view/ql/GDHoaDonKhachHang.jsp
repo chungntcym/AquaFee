@@ -4,8 +4,9 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList, model.*, dao.*"%>
 <%
-ArrayList<TKContract> listyc = new ArrayList<TKContract>();
-listyc = (new TKContractDAO()).getAllContract();
+int id = Integer.parseInt(request.getParameter("id").toString());
+ArrayList<Payment> listyc = new ArrayList<Payment>();
+listyc = (new PaymentDAO()).getInvoiceByCusId(id);
 %>
 <!DOCTYPE html>
 <html lang="vi">
@@ -15,7 +16,7 @@ listyc = (new TKContractDAO()).getAllContract();
 <jsp:include page="../include.jsp" />
 <!--Custom styles-->
 <link rel="stylesheet" href="../vendor/css/main_view.css">
-<title>Aquaman - Thống kê hợp đồng</title>
+<title>Aquaman - Thống kê hoá đơn khách hàng</title>
 </head>
 <%
 if (listyc != null) {
@@ -42,13 +43,10 @@ if (listyc != null) {
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>Họ và tên</th>
-										<th>Địa chỉ</th>
-										<th>Số điện thoại</th>
-										<th>Số CMND/CCCD</th>
-										<th>Email</th>
-										<th>Loại hợp đồng</th>
-										<th></th>
+										<th>Ngày thanh toán</th>
+										<th>Ngày ghi chỉ số</th>
+										<th>Số chỉ đồng hồ điện</th>
+										<th>Tổng cộng</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -56,18 +54,16 @@ if (listyc != null) {
 									for (int i = 0; i < listyc.size(); i++) {
 									%>
 									<tr>
-										<td name="id"><%=listyc.get(i).getId()%></td>
-										<td><%=listyc.get(i).getFullname()%></td>
-										<td><%=listyc.get(i).getAddress()%></td>
-										<td><%=listyc.get(i).getPhonenumber()%></td>
-										<td><%=listyc.get(i).getIdentityNumber()%></td>
-										<td><%=listyc.get(i).getEmail()%></td>
-										<td><%=listyc.get(i).getLoaihopdong()%></td>
+										<td><%=listyc.get(i).getId()%></td>
 										<td>
-										<button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="left"
-											title="Xem hoá đơn" onclick="location.href='GDHoaDonKhachHang.jsp?id=<%=listyc.get(i).getId()%>';">
-											<i class="fas fa-receipt"></i>
-										</button></td>
+										<%if (listyc.get(i).getPayment_time() == null){ %>
+										<strong style="color: red">Chưa thanh toán</strong>
+										<%}else{ %>
+										<%=listyc.get(i).getPayment_time()%>
+										<%} %></td>
+										<td><%=listyc.get(i).getIssue_time()%></td>
+										<td><%=listyc.get(i).getWater_meter_value()%></td>
+										<td><%=listyc.get(i).getPrice()%></td>
 									</tr>
 									<%
 									}

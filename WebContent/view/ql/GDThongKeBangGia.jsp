@@ -59,16 +59,7 @@
 									for (TKGrade grade : list) {
 									%>
 									<tr>
-										<td><%=grade.getGrade()%></td>
-										<td><%=grade.getValue()%></td>
-										<td><%=grade.getPrice()%></td>
 										<td>
-<<<<<<< HEAD
-										<%SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
-										String startDate = format1.format(grade.getStartDate());%>
-										<%=startDate%></td>
-										<td><%=grade.getLoaihopdong()%></td>
-=======
 											<div class="form-group">
 												<input type="text" class="form-control" disabled="disabled"
 													value=<%=grade.getGrade()%>>
@@ -98,7 +89,6 @@
 													value="<%=grade.getLoaihopdong() %>">
 											</div>
 										</td>
->>>>>>> origin/main
 									</tr>
 									<%
 									}
