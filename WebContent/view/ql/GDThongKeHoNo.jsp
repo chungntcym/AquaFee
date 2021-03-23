@@ -15,7 +15,7 @@ ResultSet resultSet = paymentDAO.getTableGradeByContractTypeId();
 <jsp:include page="../include.jsp" />
 <!--Custom styles-->
 <link rel="stylesheet" href="../vendor/css/main_view.css">
-<title>Aquaman - Thống kê hợp đồng</title>
+<title>Aquaman - Thống kê hộ nợ</title>
 </head>
 <body>
 	<div class="d-flex" id="wrapper">
@@ -31,7 +31,7 @@ ResultSet resultSet = paymentDAO.getTableGradeByContractTypeId();
 				<!-- Code in here -->
 				<div class="card mt-3">
 					<div class="card-header d-flex justify-content-between">
-						<div class="my-auto"></div>
+						<span class="navbar-brand mb-0 h1">Thống kê hộ nợ</span>
 					</div>
 					<div class="card-body">
 						<form>
@@ -45,7 +45,7 @@ ResultSet resultSet = paymentDAO.getTableGradeByContractTypeId();
 										<th>Loại hợp đồng</th>
 										<th>Chỉ số đồng hồ</th>
 										<th>Tiền (đồng)</th>
-										<th>Thời gian trả</th>
+										<th>Tình trạng</th>
 									</tr>
 								</thead>
 								<tbody>
