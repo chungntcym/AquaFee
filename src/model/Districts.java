@@ -1,16 +1,16 @@
 package model;
 
-public class District {
+public class Districts {
 
 	private int id;
 	private String name;
 	
-	public District(int id, String name) {
+	public Districts(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
-	public District() {
+	public Districts() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
