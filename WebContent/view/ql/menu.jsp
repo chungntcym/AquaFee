@@ -5,7 +5,7 @@
 	<div class="sidebar-heading">Quản lý</div>
 	<div class="list-group list-group-flush">
 		<a href="GDThongKeHopDong.jsp" class="list-group-item list-group-item-action bg-light">Thống kê hợp đồng</a>
-		<a href="GDThongKeHoNo.jsp"class="list-group-item list-group-item-action bg-light">Thống kê hộ nợ</a>
+		<a href="GDThongKeHoDung.jsp"class="list-group-item list-group-item-action bg-light">Thống kê hộ dùng</a>
 		<a href="GDChonLoaiHopDong.jsp" class="list-group-item list-group-item-action bg-light">Cấu hình bảng giá</a>
 		<a href="GDChonNam.jsp" class="list-group-item list-group-item-action bg-light">Xem bảng giá</a>
 	</div>

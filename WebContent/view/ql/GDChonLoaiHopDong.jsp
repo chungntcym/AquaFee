@@ -13,9 +13,9 @@
 <link rel="stylesheet" href="../vendor/css/main_view.css">
 <title>Chọn loại hợp đồng</title>
 <%
-ContractTypeDAO contractTypeDAO = new ContractTypeDAO();
-ArrayList<ContractType> listContractTypes = contractTypeDAO.getAllContractType();
-session.setAttribute("listContractType", listContractTypes);
+	ContractTypeDAO contractTypeDAO = new ContractTypeDAO();
+	ArrayList<ContractType> listContractTypes = contractTypeDAO.getAllContractType();
+	session.setAttribute("listContractType", listContractTypes);
 %>
 </head>
 
@@ -33,22 +33,22 @@ session.setAttribute("listContractType", listContractTypes);
 				<!-- Code in here -->
 				<div class="card mt-3">
 					<div class="card-header d-flex justify-content-between">
-						<span class="navbar-brand mb-0 h1">Cấu hình giá </span>
+						<div class="my-auto">Cấu hình giá</div>
 					</div>
 					<div class="card-body">
 						<div class="form-group">
 							<label for="contract-type-select">Chọn loại hợp đồng</label> <select
 								class="form-control" id="contract-type-select">
-								<option value="default" disabled selected></option>
+								<option value="default" disabled selected> </option>
 								<%
-								if (listContractTypes != null) {
-									for (ContractType contractType : listContractTypes) {
+								if(listContractTypes != null){
+									for(ContractType contractType : listContractTypes){ 
 								%>
-								<option value=<%=contractType.getId()%>>
+								<option value=<%= contractType.getId() %>>
 									<%=contractType.getType()%>
 								</option>
 								<%
-								}
+									} 
 								}
 								%>
 							</select>
@@ -65,7 +65,7 @@ session.setAttribute("listContractType", listContractTypes);
 	<script type="text/javascript">
 		$(function() {
 			$('#contract-type-select').val("deafault");
-
+			
 			$('#contract-type-select').bind('change', function() {
 				var val = $(this).val(); // get selected value
 				if (val) { // require a URL

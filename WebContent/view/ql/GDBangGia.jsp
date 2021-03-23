@@ -50,8 +50,9 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 				<form id="grade-form" method="POST" action="doSaveBangGia.jsp">
 					<div class="card mt-3">
 						<div class="card-header d-flex justify-content-between">
-							<span class="navbar-brand mb-0 h1"> Bảng giá cho <%=contractType.getType()%>
-							</span>
+							<div class="my-auto">
+								Bảng giá cho
+								<%=contractType.getType()%></div>
 							<div>
 								<button id="add-row" type="button"
 									class="btn btn-outline-secondary px-3">Thêm</button>
@@ -147,8 +148,8 @@ ArrayList<Grade> listGrade = gradeDAO.getTableGradeByContractTypeId(String.value
 						</div>
 						<div class="card-footer d-flex justify-content-end">
 							<button class="btn btn-outline-secondary px-4 mx-2" type="submit">Lưu</button>
-							<button class="btn btn-outline-secondary px-4" type="button"
-								name="back" onclick="history.back()">Quay lại</button>
+							<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay
+								lại</button>
 						</div>
 					</div>
 				</form>
