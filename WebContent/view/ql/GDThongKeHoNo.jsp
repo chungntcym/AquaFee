@@ -5,7 +5,7 @@
 <%@ page import="java.util.ArrayList, model.*, dao.*"%>
 <%
 TKPaymentDAO paymentDAO = new TKPaymentDAO();
-ResultSet resultSet = paymentDAO.getTableGradeByContractTypeId();
+ResultSet resultSet = paymentDAO.getPaymentStats();
 %>
 <!DOCTYPE html>
 <html lang="vi">

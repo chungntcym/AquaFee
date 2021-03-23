@@ -6,7 +6,8 @@
 <%
 int id = Integer.parseInt(request.getParameter("id").toString());
 ArrayList<Payment> listyc = new ArrayList<Payment>();
-listyc = (new PaymentDAO()).getInvoiceByCusId(id);
+PaymentDAO paymentDAO = new PaymentDAO();
+listyc = paymentDAO.getInvoiceByCusId(id);
 %>
 <!DOCTYPE html>
 <html lang="vi">
