@@ -40,15 +40,16 @@ session.setAttribute("idAu", idAu);
 						<div class="card-body">
 							<% if (idAu==2){%> 
 								<form>
+								
 								  	<textarea id ="message-1" name="message1" rows="10" cols="79"></textarea>
 								</form>
 							<%} else if (idAu==0){ %>
 								<form>
-								  	<textarea id ="message-2" name="message2" rows="10" cols="79" disabled>"Chào bạn!\nTiền nước đến ngày "+issue_time+" của bạn là: "+ Tổng nợ +". Hãy đến địa điểm gần nhất để đóng tiền.\n Sau 10 ngày kể từ ngày nhận thông báo, nếu chủ hộ chưa đóng tiền, công ty sẽ tiến hành cắt nước.\n Xin chân thành cảm ơn"</textarea>
+								  	<p>Chào bạn!<br>Tiền nước đến ngày: {Ngày ghi chỉ số đồng hồ} của bạn là: {Tổng tiền còn nợ}.<br> Hãy đến địa điểm gần nhất để đóng tiền.<br> Sau 10 ngày kể từ ngày nhận thông báo, nếu chủ hộ chưa đóng tiền, công ty sẽ tiến hành cắt nước.<br> Xin chân thành cảm ơn</p>
 								</form>
 							<%} else {%>
 								<form>
-									<textarea id ="message-3" name="message3" rows="10" cols="79" disabled>"Chào bạn!\n Chúng tôi rất xin lỗi khi phải thông báo điều này với bạn. Nước sẽ bị cắt từ thời điểm:"+ Thời gian bắt đầu +" đến thời điểm "+ Thời gian kết thúc +". Mong nhận được sự thông cảm từ các bạn"</textarea>
+									<p>Chào bạn!<br> Chúng tôi rất xin lỗi khi phải thông báo điều này với bạn.<br> Nước sẽ bị cắt từ thời điểm: {Thời gian bắt đầu} đến thời điểm  {Thời gian kết thúc} <br>Mong nhận được sự thông cảm từ các bạn</p>
 									<div class="my-auto">Thời gian bắt đầu</div>
 									<textarea id ="message-4" name="cuttime" rows="1" cols="20" ></textarea>
 									<div class="my-auto">Thời gian kết thúc</div>

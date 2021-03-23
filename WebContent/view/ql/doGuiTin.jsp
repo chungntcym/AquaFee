@@ -12,7 +12,6 @@
 		id = Integer.parseInt(idString);
 	} 
 	String str2[]={};
-	System.out.print(id);
 	if (id==2){
 	str2=request.getParameterValues("message1");
 	}
@@ -71,21 +70,13 @@
 		   System.out.println("Messaging Exception:  "+e);
 	   }
   	} 
+  	
+    String redirectURL = "GDChinhNVQuanly.jsp";
+    response.sendRedirect(redirectURL);
 	
 %>
-
-<html>
-   <head>
-      <title>Send Email using JSP</title>
-   </head>
-   
-   <body>
-      <center>
-         <h1>Send Email using JSP</h1>
-      </center>
-      
-      <p align = "center">
-            out.println("Result: " + result + "\n");
-      </p>
-   </body>
-</html>
+<script>
+function myFunction() {
+  alert("Hello\nHow are you?");
+}
+</script>
