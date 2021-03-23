@@ -34,7 +34,7 @@ if (listyc != null) {
 				<!-- Code in here -->
 				<div class="card mt-3">
 					<div class="card-header d-flex justify-content-between">
-						<div class="my-auto"></div>
+						<span class="navbar-brand mb-0 h1">Thống kê hợp đồng</span>
 					</div>
 					<div class="card-body">
 						<form>
