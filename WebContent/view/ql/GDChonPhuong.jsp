@@ -51,7 +51,7 @@ session.setAttribute("listSubDistrict", listSubDistrict);
 				<!-- Code in here -->
 				<div class="card mt-3">
 					<div class="card-header d-flex justify-content-between">
-						<div class="my-auto">Thông báo khách hàng qua Email</div>
+						<span class="navbar-brand mb-0 h1">Thông báo khách hàng qua Email </span>
 					</div>
 					<div class="card-body">
 						<div class="form-group">

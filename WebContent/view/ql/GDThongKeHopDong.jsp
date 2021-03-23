@@ -34,7 +34,7 @@ if (listyc != null) {
 				<!-- Code in here -->
 				<div class="card mt-3">
 					<div class="card-header d-flex justify-content-between">
-						<div class="my-auto"></div>
+						<span class="navbar-brand mb-0 h1">Thống kê hợp đồng</span>
 					</div>
 					<div class="card-body">
 						<form>
@@ -64,10 +64,13 @@ if (listyc != null) {
 										<td><%=listyc.get(i).getEmail()%></td>
 										<td><%=listyc.get(i).getLoaihopdong()%></td>
 										<td>
-										<button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="left"
-											title="Xem hoá đơn" onclick="location.href='GDHoaDonKhachHang.jsp?id=<%=listyc.get(i).getId()%>';">
-											<i class="fas fa-receipt"></i>
-										</button></td>
+											<button class="btn btn-info" type="button"
+												data-toggle="tooltip" data-placement="left"
+												title="Xem hoá đơn"
+												onclick="location.href='GDHoaDonKhachHang.jsp?id=<%=listyc.get(i).getId()%>';">
+												<i class="fas fa-receipt"></i>
+											</button>
+										</td>
 									</tr>
 									<%
 									}
@@ -76,10 +79,14 @@ if (listyc != null) {
 								</tbody>
 							</table>
 							<div class="card-footer d-flex justify-content-end">
-								<button class="btn btn-outline-secondary px-4" type="button" name="back" onclick="history.back()">Quay lại</button>
+								<button class="btn btn-outline-secondary px-4" type="button"
+									name="back" onclick="history.back()">Quay lại</button>
 							</div>
 						</form>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

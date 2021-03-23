@@ -35,8 +35,7 @@ session.setAttribute("idAu", idAu);
 				<form id="grade-form" method="POST" action="doGuiTin.jsp?id=<%=idAu%>">
 					<div class="card mt-3">
 						<div class="card-header d-flex justify-content-between">
-							<div class="my-auto">
-								Soạn thông báo</div>
+							<span class="navbar-brand mb-0 h1">Soạn thông báo</span>
 						</div>
 						<div class="card-body">
 							<% if (idAu==2){%> 

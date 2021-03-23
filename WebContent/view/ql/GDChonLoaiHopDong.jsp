@@ -33,7 +33,7 @@ session.setAttribute("listContractType", listContractTypes);
 				<!-- Code in here -->
 				<div class="card mt-3">
 					<div class="card-header d-flex justify-content-between">
-						<span class="navbar-brand mb-0 h1">Cấu hình giá </span>
+						<span class="navbar-brand mb-0 h1">Cấu hình giá</span>
 					</div>
 					<div class="card-body">
 						<div class="form-group">

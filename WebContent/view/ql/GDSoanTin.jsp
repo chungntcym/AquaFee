@@ -36,9 +36,7 @@ for (int j=0;j<idCustomer.length;j++){
 				
 					<div class="card mt-3">
 						<div class="card-header d-flex justify-content-between">
-							<div class="my-auto">
-								Chọn loại thông báo bạn muốn gửi
-							</div>
+						<span class="navbar-brand mb-0 h1">Chọn loại thông báo bạn muốn gửi</span>
 						</div>
 						<div class="card-body">
 

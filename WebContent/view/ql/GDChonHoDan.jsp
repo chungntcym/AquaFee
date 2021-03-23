@@ -50,9 +50,9 @@ ArrayList<Customer> listCustomer = customerDAO.getAll(String.valueOf(id));
 				<form id="grade-form" method="POST" action="GDSoanTin.jsp">
 					<div class="card mt-3">
 						<div class="card-header d-flex justify-content-between">
-							<div class="my-auto">
-								Chọn hộ gia đình đến từ
-								<%=subdistrict.getName()%></div>
+							<span class="navbar-brand mb-0 h1">Chọn hộ gia đình đến từ
+								<%=subdistrict.getName()%></span>
+
 							<div>
 								<button id="check-all" type="button"
 									class="btn btn-outline-secondary px-1">Chọn tất cả</button>
@@ -65,34 +65,38 @@ ArrayList<Customer> listCustomer = customerDAO.getAll(String.valueOf(id));
 							<table id="grade-table" class="table">
 								<thead>
 									<tr>
-										<th  scope="col" style="width: 10%">ID</th>
-										<th scope="col" >Tên chủ hộ</th>
+										<th scope="col" style="width: 10%">ID</th>
+										<th scope="col">Tên chủ hộ</th>
 										<th scope="col">Email</th>
 										<th scope="col">Địa chỉ cụ thể</th>
-										<th scope="col" >Chọn</th>
+										<th scope="col">Chọn</th>
 									</tr>
 								</thead>
 								<tbody>
 									<%
-									for (int i = 0; i < listCustomer.size(); i++){
+									for (int i = 0; i < listCustomer.size(); i++) {
 									%>
 									<tr>
 										<td><%=listCustomer.get(i).getId()%></td>
 										<td><%=listCustomer.get(i).getFullname()%></td>
 										<td><%=listCustomer.get(i).getEmail()%></td>
 										<td><%=listCustomer.get(i).getAddress()%></td>
-										<td><input type='checkbox' name='email-check' id='check_all' value=<%=listCustomer.get(i).getId()%> /></td> <%
-									 }
-									 %>
+										<td><input type='checkbox' name='email-check'
+											id='check_all' value=<%=listCustomer.get(i).getId()%> /></td>
+										<%
+										}
+										%>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 						<div class="card-footer d-flex justify-content-end">
-							<button class="btn btn-outline-secondary px-3" type="submit">Soạn tin</button>
-							<button class="btn btn-outline-secondary px-3" type="button" name="back" onclick="history.back()">Quay lại</button>
+							<button class="btn btn-outline-secondary px-3" type="submit">Soạn
+								tin</button>
+							<button class="btn btn-outline-secondary px-3" type="button"
+								name="back" onclick="history.back()">Quay lại</button>
 						</div>
-						
+
 					</div>
 				</form>
 			</div>
@@ -116,30 +120,28 @@ ArrayList<Customer> listCustomer = customerDAO.getAll(String.valueOf(id));
 		});
 
 		$("#grade-table").on('click', '.btnCheck', function() {
-			
+
 		});
-		document.getElementById("check-all").onclick = function () 
-        {
-            // Lấy danh sách checkbox
-            var checkboxes = document.getElementsByName('email-check');
+		document.getElementById("check-all").onclick = function() {
+			// Lấy danh sách checkbox
+			var checkboxes = document.getElementsByName('email-check');
 
-            // Lặp và thiết lập checked
-            for (var i = 0; i < checkboxes.length; i++){
-                checkboxes[i].checked = true;
-            }
-        };
+			// Lặp và thiết lập checked
+			for (var i = 0; i < checkboxes.length; i++) {
+				checkboxes[i].checked = true;
+			}
+		};
 
-        // Chức năng bỏ chọn hết
-        document.getElementById("un-check-all").onclick = function () 
-        {
-            // Lấy danh sách checkbox
-            var checkboxes = document.getElementsByName('email-check');
+		// Chức năng bỏ chọn hết
+		document.getElementById("un-check-all").onclick = function() {
+			// Lấy danh sách checkbox
+			var checkboxes = document.getElementsByName('email-check');
 
-            // Lặp và thiết lập Uncheck
-            for (var i = 0; i < checkboxes.length; i++){
-                checkboxes[i].checked = false;
-            }
-        };
+			// Lặp và thiết lập Uncheck
+			for (var i = 0; i < checkboxes.length; i++) {
+				checkboxes[i].checked = false;
+			}
+		};
 	</script>
 </body>
 </html>
