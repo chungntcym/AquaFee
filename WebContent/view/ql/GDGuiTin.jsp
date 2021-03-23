@@ -41,7 +41,7 @@ session.setAttribute("idAu", idAu);
 							<% if (idAu==2){%> 
 								<form>
 								
-								  	<textarea id ="message-1" name="message1" rows="10" cols="79"></textarea>
+								  	<textarea class="form-control" id ="message-1" name="message1" rows="10"></textarea>
 								</form>
 							<%} else if (idAu==0){ %>
 								<form>
@@ -51,14 +51,14 @@ session.setAttribute("idAu", idAu);
 								<form>
 									<p>Chào bạn!<br> Chúng tôi rất xin lỗi khi phải thông báo điều này với bạn.<br> Nước sẽ bị cắt từ thời điểm: {Thời gian bắt đầu} đến thời điểm  {Thời gian kết thúc} <br>Mong nhận được sự thông cảm từ các bạn</p>
 									<div class="my-auto">Thời gian bắt đầu</div>
-									<textarea id ="message-4" name="cuttime" rows="1" cols="20" ></textarea>
+									<textarea class="form-control" id ="message-4" name="cuttime" rows="1"></textarea>
 									<div class="my-auto">Thời gian kết thúc</div>
-									<textarea id ="message-5" name="ontime" rows="1" cols="20" ></textarea>
+									<textarea class="form-control" id ="message-5" name="ontime" rows="1"></textarea>
 								</form>
 							<%} %>
 						</div>
 						<div class="card-footer d-flex justify-content-end">
-							<button class="btn btn-outline-secondary px-3" type="submit" name="send-email">Gửi tin</button>
+							<button class="btn btn-outline-secondary px-3 mx-2" type="submit" name="send-email">Gửi tin</button>
 							<button class="btn btn-outline-secondary px-3" type="button" name="back" onclick="history.back()">Huỷ</button>
 						</div>
 						

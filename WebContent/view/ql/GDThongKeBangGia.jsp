@@ -1,3 +1,4 @@
+<%@page import="java.sql.Timestamp"%>
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.*, java.text.*, model.*, dao.*"%>
@@ -58,9 +59,22 @@
 								</thead>
 								<tbody>
 									<%
+									Timestamp temp = list.get(0).getStartDate();
 									for (TKGrade grade : list) {
 									%>
+									<%
+									if (grade.getStartDate().compareTo(temp) == 0) {
+									%>
 									<tr>
+										<%
+										} else {
+										temp = grade.getStartDate();
+										%>
+									
+									<tr style="border-top: 2px solid;">
+										<%
+										}
+										%>
 										<td>
 											<div class="form-group">
 												<input type="text" class="form-control" disabled="disabled"

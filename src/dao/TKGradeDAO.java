@@ -14,7 +14,7 @@ public class TKGradeDAO extends DAO {
 		super();
 	}
 	
-	private static final String GET_GRADE = "SELECT a.grade, a.value, a.price, a.startDate, b.type FROM tblgrade a join tblcontracttype b on a.tblContractTypeid = b.id where year(startDate) = year(?) order by a.grade;";
+	private static final String GET_GRADE = "SELECT a.grade, a.value, a.price, a.startDate, b.type FROM tblgrade a join tblcontracttype b on a.tblContractTypeid = b.id where year(startDate) = year(?) order by a.startDate;";
 	
 	public ArrayList<TKGrade> getGradeByyear(Date year) throws SQLException{
 		try {
