@@ -8,9 +8,9 @@ import java.sql.SQLException;
 public class TKPaymentDAO extends DAO {
 
 	private static final String GET_PAYMENT_STATISTICAL	 = "SELECT * FROM  `tblpayment`, `tblcontracttype`, `tblcustomer` "
-			+ "WHERE tblcontracttype.id = tblcustomer.tblContractTypeid AND tblcustomer.id = tblCustomerid AND tblpayment.payment_time IS NULL;";
+			+ "WHERE tblcontracttype.id = tblcustomer.tblContractTypeid AND tblcustomer.id = tblCustomerid;";
 
-	public ResultSet getTableGradeByContractTypeId() throws SQLException {
+	public ResultSet getTableGradeByContractTypeId(String contractTypeId) throws SQLException {
 		try {
 			Connection connection = getConnection();
 			// try-with-resource statement will auto close the connection.
