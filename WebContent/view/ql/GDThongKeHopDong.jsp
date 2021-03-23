@@ -65,7 +65,7 @@ if (listyc != null) {
 										<td><%=listyc.get(i).getLoaihopdong()%></td>
 										<td>
 										<button class="btn btn-info" type="button" data-toggle="tooltip" data-placement="left"
-											title="Xem hoá đơn">
+											title="Xem hoá đơn" onclick="location.href='GDHoaDonKhachHang.jsp?id=<%=listyc.get(i).getId()%>';">
 											<i class="fas fa-receipt"></i>
 										</button></td>
 									</tr>

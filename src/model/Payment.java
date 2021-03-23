@@ -8,6 +8,7 @@ public class Payment {
 	private Timestamp payment_time;
 	private Timestamp issue_time;
 	private float water_meter_value;
+	private float price;
 
 	public Payment(int id, Timestamp payment_time, Timestamp issue_time, float water_meter_value) {
 		super();
@@ -51,6 +52,14 @@ public class Payment {
 
 	public void setWater_meter_value(float water_meter_value) {
 		this.water_meter_value = water_meter_value;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
 	}
 
 }
