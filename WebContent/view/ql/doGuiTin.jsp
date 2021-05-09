@@ -16,13 +16,17 @@
 	str2=request.getParameterValues("message1");
 	}
 	String ontime[];
+	String onday[];
+	String cutday[];
 	String cuttime[];
 	String str1="";
 	String str0="";
 	if (id==1){
-		ontime = request.getParameterValues("ontime");;
-		cuttime = request.getParameterValues("cuttime");;
-  		str1="Chào bạn!\n Chúng tôi rất xin lỗi khi phải thông báo điều này với bạn. Nước sẽ bị cắt từ thời điểm:"+cuttime[0]+" đến thời điểm "+ontime[0]+". Mong nhận được sự thông cảm từ các bạn";
+		ontime = request.getParameterValues("ontime");
+		cuttime = request.getParameterValues("cuttime");
+		onday = request.getParameterValues("onday");
+		cutday= request.getParameterValues("cutday");
+  		str1="Chào bạn!\n Chúng tôi rất xin lỗi khi phải thông báo điều này với bạn. Nước sẽ bị cắt từ thời điểm: "+cuttime[0]+" ngày "+cutday[0]+" đến thời điểm :"+ontime[0]+" ngày "+onday[0]+". Mong nhận được sự thông cảm từ các bạn";
 		}
   	for (int i=0;i < listCustomer.size();i++){
   		PaymentDAO paymentDAO = new PaymentDAO();
@@ -71,7 +75,7 @@
 	   }
   	} 
   	
-    String redirectURL = "GDChinhNVQuanly.jsp";
+    String redirectURL = "GDChinhNVQuanly.jsp?result=SMSuccess";
     response.sendRedirect(redirectURL);
 	
 %>

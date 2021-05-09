@@ -22,7 +22,7 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
-					<h3 class="text-center">Đăng kí</h3>
+					<h3 class="text-center">Sign up</h3>
 				</div>
 				<div class="card-body">
 					<form method="POST" action="doDangki.jsp">
@@ -32,14 +32,14 @@
 									<span class="input-group-text"><i class="fas fa-user"></i></span>
 								</div>
 								<input type="text" class="form-control" name="username"
-									placeholder="Tài khoản" required>
+									placeholder="username" required>
 							</div>
 							<div class="input-group form-group col-6">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-key"></i></span>
 								</div>
 								<input type="password" class="form-control" name="password"
-									placeholder="Mật khẩu" required>
+									placeholder="password" required>
 							</div>
 						</div>
 						<div class="row">
@@ -48,17 +48,17 @@
 									<span class="input-group-text"><i class="fas fa-user"></i></span>
 								</div>
 								<input type="text" class="form-control" name="fullname"
-									placeholder="Họ tên" <%if (employee != null) {%>
+									placeholder="fullname" <%if (employee != null) {%>
 									value="<%=employee.getFullname()%>" <%}%> required>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-group form-group col-6">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fas fa-calendar"></i></span>
+									<span class="input-group-text"><i class="fas fa-key"></i></span>
 								</div>
 								<input type="date" class="form-control" name="dateofbirth"
-									placeholder="Ngày sinh" <%if (employee != null) {%>
+									placeholder="DOB" <%if (employee != null) {%>
 									value="<%=employee.getAddress()%>" <%}%>
 									required>
 							</div>
@@ -67,19 +67,19 @@
 									<span class="input-group-text"><i class="fas fa-user"></i></span>
 								</div>
 								<input type="email" class="form-control" name="email"
-									placeholder="Email" <%if (employee != null) {%>
+									placeholder="email" <%if (employee != null) {%>
 									value="<%=employee.getPhonenumber()%>" <%}%> required>
 							</div>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Đăng kí"
+							<input type="submit" value="Signup"
 								class="btn float-right login_btn">
 						</div>
 					</form>
 				</div>
 				<div class="card-footer">
 					<div class="d-flex justify-content-center links">
-						Đã có tài khoản<a href="./gdDangnhap.jsp">Đăng nhập?</a>
+						Already have an account?<a href="./gdDangnhap.jsp">Sign in?</a>
 					</div>
 				</div>
 			</div>
@@ -93,13 +93,13 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLongTitle">Tên đăng nhập đã bị trùng</h5>
+					<h5 class="modal-title" id="exampleModalLongTitle">This username has been taken</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">Tên đăng nhập này đã trùng, vui lòng chọn tên đăng nhập khác</div>
+				<div class="modal-body">This username has been taken, please use other username</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">Close</button>

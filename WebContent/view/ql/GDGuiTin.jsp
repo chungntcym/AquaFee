@@ -32,7 +32,7 @@ session.setAttribute("idAu", idAu);
 
 			<div class="container-fluid">
 				<!-- Code in here -->
-				<form id="grade-form" method="POST" action="doGuiTin.jsp?id=<%=idAu%>">
+				<form id="grade-form" method="POST" action="doGuiTin.jsp?id=<%=idAu%>" accept-charset="utf-8">
 					<div class="card mt-3">
 						<div class="card-header d-flex justify-content-between">
 							<span class="navbar-brand mb-0 h1">Soạn thông báo</span>
@@ -45,15 +45,44 @@ session.setAttribute("idAu", idAu);
 								</form>
 							<%} else if (idAu==0){ %>
 								<form>
+									<span class="navbar-brand mb-0" STYLE="font-size:110%"><b>Đối với khách còn nợ</b></span>
 								  	<p>Chào bạn!<br>Tiền nước đến ngày: {Ngày ghi chỉ số đồng hồ} của bạn là: {Tổng tiền còn nợ}.<br> Hãy đến địa điểm gần nhất để đóng tiền.<br> Sau 10 ngày kể từ ngày nhận thông báo, nếu chủ hộ chưa đóng tiền, công ty sẽ tiến hành cắt nước.<br> Xin chân thành cảm ơn</p>
+								</form>
+								<form>
+									<span class="navbar-brand mb-0" STYLE="font-size:110%"><b>Đối với khách đã đóng tiền</b></span>
+								  	<p>Bạn đã thanh toán hoá đơn thành công</p>
 								</form>
 							<%} else {%>
 								<form>
 									<p>Chào bạn!<br> Chúng tôi rất xin lỗi khi phải thông báo điều này với bạn.<br> Nước sẽ bị cắt từ thời điểm: {Thời gian bắt đầu} đến thời điểm  {Thời gian kết thúc} <br>Mong nhận được sự thông cảm từ các bạn</p>
 									<div class="my-auto">Thời gian bắt đầu</div>
-									<textarea class="form-control" id ="message-4" name="cuttime" rows="1"></textarea>
+									<!-- <textarea class="form-control" id ="message-4" name="cuttime" rows="1"></textarea> -->
+									<div class="card-body">
+										<div class="d-flex flex-row">
+											<div class="form-group">
+												<input class="form-control" type="time" id="appt" name="cuttime" value="00:00" required>
+											</div>
+											<div class="form-group">
+												<input class="form-control" type="date" id="date-input" name="cutday">
+											</div>
+
+										</div>
+									</div>
+									
 									<div class="my-auto">Thời gian kết thúc</div>
-									<textarea class="form-control" id ="message-5" name="ontime" rows="1"></textarea>
+									<!-- <textarea class="form-control" id ="message-5" name="ontime" rows="1"></textarea> -->
+									<div class="card-body">
+										<div class="d-flex flex-row">
+											<div class="form-group">
+												<input class="form-control" type="time" id="appt" name="ontime" value="00:00" required>
+											</div>
+											<div class="form-group">
+												<input class="form-control" type="date" id="date-input" name="onday">
+												
+											</div>
+
+										</div>
+									</div>
 								</form>
 							<%} %>
 						</div>
