@@ -17,7 +17,7 @@ public class TestDemo extends TestDriver {
 		String title = driver.getTitle();
 		String expectedTitle = "Sign in";
 		driver.close();
-		assertEquals("Title not as expected", title, expectedTitle);
+		assertEquals(expectedTitle, title, "Title not as expected");
 	}
 
 	@Test
@@ -31,11 +31,11 @@ public class TestDemo extends TestDriver {
 		// Click login button
 		driver.findElement(By.id("btn_login")).click();
 
-		//Check if login successfully, if not the title will not be same as expected
+		// Check if login successfully, if not the title will not be same as expected
 		String title = driver.getTitle();
 		String expectedTitle = "AquaFee";
 		driver.close();
-		assertEquals("Title not as expected", title, expectedTitle);
+		assertEquals(expectedTitle, title, "Title not as expected");
 	}
 
 }
