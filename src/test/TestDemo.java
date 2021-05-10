@@ -1,48 +1,41 @@
 package test;
 
-import java.util.concurrent.TimeUnit;
+import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestDemo {
-	
-	public static void main(String[] args) {
-		
-		System.setProperty("webdriver.chrome.driver", "D:\\Works\\AquaFee\\browserdriver\\chromedriver.exe");
-		ChromeDriver driver = new ChromeDriver();
+public class TestDemo extends TestDriver {
+
+	ChromeDriver driver = getDriver();
+
+	@Test
+	public void login_title_test() {
 		driver.get("http://localhost:8080/AquaFee");
-		
 		String title = driver.getTitle();
-		String expectedTitle = "AquaFee";
-		
-		if(expectedTitle.contentEquals(title)) {
-			System.out.print("Test Passed");
-		}
-		else {
-			System.out.print("Test Failed");
-		}
-		
-		//Fill username and password sequentially with admin and admin 
+		String expectedTitle = "Sign in";
+		driver.close();
+		assertEquals("Title not as expected", title, expectedTitle);
+	}
+
+	@Test
+	public void login_as_admin_test() {
+		driver.get("http://localhost:8080/AquaFee");
+		// Fill username and password sequentially with admin and admin
 		WebElement username = driver.findElement(By.name("username"));
 		username.sendKeys("admin");
 		WebElement password = driver.findElement(By.name("password"));
 		password.sendKeys("admin");
-		//Click login button
+		// Click login button
 		driver.findElement(By.id("btn_login")).click();
-		
-		//Wait for 2 seconds
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		
-		//Back to previous page
-		driver.navigate().back();
-		
-		//Fill username and password sequentially with user and user 
-		username = driver.findElement(By.name("username"));
-		username.sendKeys("user");
-		password = driver.findElement(By.name("password"));
-		password.sendKeys("user");
+
+		//Check if login successfully, if not the title will not be same as expected
+		String title = driver.getTitle();
+		String expectedTitle = "AquaFee";
+		driver.close();
+		assertEquals("Title not as expected", title, expectedTitle);
 	}
 
 }

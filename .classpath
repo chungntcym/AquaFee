@@ -27,5 +27,6 @@
 	<classpathentry kind="lib" path="C:/Users/Nam Anh/Downloads/selenium-java-3.141.59/client-combined-3.141.59.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nam Anh/Downloads/selenium-java-3.141.59/client-combined-3.141.59-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nam Anh/Downloads/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
