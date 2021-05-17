@@ -5,7 +5,7 @@
 <%@ page import="java.util.ArrayList, model.*, dao.*"%>
 <%
 TKPaymentDAO paymentDAO = new TKPaymentDAO();
-ResultSet resultSet = paymentDAO.getPaymentStats();
+ArrayList<TKPayment> listTKPayment = paymentDAO.getPaymentStats();
 %>
 <!DOCTYPE html>
 <html lang="vi">
@@ -51,17 +51,17 @@ ResultSet resultSet = paymentDAO.getPaymentStats();
 								<tbody>
 									<%
 									int i = 1;
-									while (resultSet.next()) {
+									for (TKPayment item : listTKPayment) {
 									%>
 									<tr>
 										<td><%=i%></td>
-										<td><%=resultSet.getInt("tblCustomerid")%></td>
-										<td><%=resultSet.getString("fullname")%></td>
-										<td><%=resultSet.getString("address")%></td>
-										<td><%=resultSet.getString("type")%></td>
-										<td><%=resultSet.getInt("water_meter_value")%></td>
-										<td><%=resultSet.getFloat("price")%></td>
-										<td><%=resultSet.getTimestamp("payment_time") == null ? "Chưa trả": resultSet.getTimestamp("payment_time")%></td>
+										<td><%=item.getCustomerId()%></td>
+										<td><%=item.getFullname()%></td>
+										<td><%=item.getAddress()%></td>
+										<td><%=item.getType()%></td>
+										<td><%=item.getWaterMeterValue()%></td>
+										<td><%=item.getPrice()%></td>
+										<td><%=item.getPaymentTime() == null ? "Chưa trả": item.getPaymentTime()%></td>
 									</tr>
 									<%
 									i++;
