@@ -9,7 +9,7 @@ public class Grade {
 	private int value;
 	private float price;
 	private Timestamp startDate;
-	
+
 	public Grade(int id, int grade, int value, float price, Timestamp startDate) {
 		super();
 		this.id = id;
@@ -62,5 +62,34 @@ public class Grade {
 	public void setStartDate(Timestamp startDate) {
 		this.startDate = startDate;
 	}
-		
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + grade;
+		result = prime * result + Float.floatToIntBits(price);
+		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
+		result = prime * result + value;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Grade other = (Grade) obj;
+		if (grade != other.grade)
+			return false;
+		if (Float.floatToIntBits(price) != Float.floatToIntBits(other.price))
+			return false;
+		if (value != other.value)
+			return false;
+		return true;
+	}
+
 }

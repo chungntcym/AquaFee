@@ -9,7 +9,7 @@ import model.Grade;
 
 public class GradeDAO extends DAO {
 
-	private static final String GET_GRADE_TABLE_BY_CONTRACT_TYPE = "SELECT grade, value, price FROM `tblgrade`, "
+	private static final String GET_GRADE_TABLE_BY_CONTRACT_TYPE = "SELECT grade, value, price, startDate FROM `tblgrade`, "
 			+ "(SELECT max(startDate) as latestDate FROM `tblgrade` WHERE tblContractTypeid=?) as latestDate "
 			+ "WHERE tblContractTypeid=? AND startDate = latestDate.latestDate ORDER BY grade;";
 
@@ -30,6 +30,7 @@ public class GradeDAO extends DAO {
 				grade.setGrade(resultSet.getInt("grade"));
 				grade.setPrice(resultSet.getFloat("price"));
 				grade.setValue(resultSet.getInt("value"));
+				grade.setStartDate(resultSet.getTimestamp("startDate"));
 				listGrade.add(grade);
 			}
 			return listGrade;
