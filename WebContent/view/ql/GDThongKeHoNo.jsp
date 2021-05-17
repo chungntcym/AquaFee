@@ -55,7 +55,7 @@ ArrayList<TKPayment> listTKPayment = paymentDAO.getPaymentStats();
 									%>
 									<tr>
 										<td><%=i%></td>
-										<td><%=item.getCustomerId()%></td>
+										<td><%=item.getId()%></td>
 										<td><%=item.getFullname()%></td>
 										<td><%=item.getAddress()%></td>
 										<td><%=item.getType()%></td>

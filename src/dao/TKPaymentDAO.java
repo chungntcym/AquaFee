@@ -23,7 +23,7 @@ public class TKPaymentDAO extends DAO {
 			ArrayList<TKPayment> listTkPayment = new ArrayList<>();
 			while(resultSet.next()) {
 				TKPayment item = new TKPayment();
-				item.setCustomerId(resultSet.getInt("tblCustomerid"));
+				item.setId(resultSet.getInt("tblCustomerid"));
 				item.setFullname(resultSet.getString("fullname"));
 				item.setAddress(resultSet.getString("address"));
 				item.setType(resultSet.getString("type"));

@@ -2,33 +2,13 @@ package model;
 
 import java.sql.Timestamp;
 
-public class TKPayment {
+public class TKPayment extends Customer {
 	
-	int customerId;
-	String fullname;
-	String address;
 	String type;
 	int waterMeterValue;
 	float price;
 	Timestamp paymentTime;
-	public int getCustomerId() {
-		return customerId;
-	}
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-	public String getFullname() {
-		return fullname;
-	}
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	
 	public String getType() {
 		return type;
 	}
@@ -56,9 +36,9 @@ public class TKPayment {
 	public TKPayment(int customerId, String fullname, String address, String type, int waterMeterValue, float price,
 			Timestamp paymentTime) {
 		super();
-		this.customerId = customerId;
-		this.fullname = fullname;
-		this.address = address;
+		this.setFullname(fullname);
+		this.setId(customerId);
+		this.setAddress(address);
 		this.type = type;
 		this.waterMeterValue = waterMeterValue;
 		this.price = price;
