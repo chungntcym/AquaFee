@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import model.Grade;
 
 public class GradeDAO extends DAO {
+	
+	private final Connection connection = getConnection();
+	
+	public GradeDAO() {
+		super();
+	}
 
 	private static final String GET_GRADE_TABLE_BY_CONTRACT_TYPE = "SELECT grade, value, price, startDate FROM `tblgrade`, "
 			+ "(SELECT max(startDate) as latestDate FROM `tblgrade` WHERE tblContractTypeid=?) as latestDate "
@@ -18,7 +24,6 @@ public class GradeDAO extends DAO {
 
 	public ArrayList<Grade> getTableGradeByContractTypeId(String contractTypeId) throws SQLException {
 		try {
-			Connection connection = getConnection();
 			// try-with-resource statement will auto close the connection.
 			PreparedStatement preparedStatement = connection.prepareStatement(GET_GRADE_TABLE_BY_CONTRACT_TYPE);
 			preparedStatement.setString(1, contractTypeId);
@@ -42,7 +47,6 @@ public class GradeDAO extends DAO {
 
 	public boolean saveGradeTable(ArrayList<Grade> listGrade, int contractTypeId) throws SQLException {
 		try {
-			Connection connection = getConnection();
 			// try-with-resource statement will auto close the connection.
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT_GRADE);
 
@@ -65,6 +69,10 @@ public class GradeDAO extends DAO {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	public Connection getDAOConnection() {
+		return this.connection;
 	}
 
 }

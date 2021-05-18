@@ -2,7 +2,7 @@ package testdao;
 
 import static org.junit.Assert.assertEquals;
 
-import java.sql.SQLException;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -15,9 +15,13 @@ import model.Grade;
 class TestGradeDAO extends DAO {
 
 	@Test
-	void testGradeDAO() {
+	void testGradeDAO() throws Exception {
+		GradeDAO gradeDao = new GradeDAO();
+		
+		Connection connection = gradeDao.getDAOConnection();
+		connection.setAutoCommit(false);
 		try {
-			GradeDAO gradeDao = new GradeDAO();
+			
 				
 			Date date = new Date();
 			java.sql.Timestamp startDate = new java.sql.Timestamp(date.getTime());		
@@ -34,8 +38,9 @@ class TestGradeDAO extends DAO {
 			
 			//If pass => both create and read function work normally
 			assertEquals(listGradeTest, listGradeResult);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} finally {
+			connection.rollback();
+		    connection.close();
 		}
 	}
 
