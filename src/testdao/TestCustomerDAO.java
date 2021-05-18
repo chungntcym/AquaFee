@@ -57,13 +57,13 @@ class TestCustomerDAO {
 			//Test if the returned arraylist is as same as in database
 			assertTrue(listCustomerTest2.get(0).getFullname().equals("Vũ Tuấn Anh"));
 			assertTrue(listCustomerTest2.get(0).getAddress().equals("Bắc Giang"));
-			assertTrue(listCustomerTest2.get(0).getEmail().equals("tuananhvubg1999@gmail.com"));
+			assertEquals("AnhVT@email.com", listCustomerTest2.get(0).getEmail());
 			id="3";
 			ArrayList<Customer> listCustomerTest3 = customerDao.getAll(id);
 			//Test if the returned arraylist is as same as in database
 			assertTrue(listCustomerTest3.get(0).getFullname().equals("Nguyễn Vũ Chiến"));
 			assertTrue(listCustomerTest3.get(0).getAddress().equals("Quảng Ninh"));
-			assertTrue(listCustomerTest3.get(0).getEmail().equals("leanhtuanltv1999@gmail.com"));
+			assertEquals("ChienNV@email.com", listCustomerTest3.get(0).getEmail());
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

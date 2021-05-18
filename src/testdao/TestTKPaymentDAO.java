@@ -17,15 +17,15 @@ class TestTKPaymentDAO {
 		TKPaymentDAO testDAO = new TKPaymentDAO();
 		try {
 			ArrayList<TKPayment> listTKPayment = testDAO.getPaymentStats();
-			for(TKPayment item : listTKPayment) {
-				if(item.getId() == 3) {
+			for (TKPayment item : listTKPayment) {
+				if (item.getId() == 3) {
 					assertEquals(item.getFullname().trim(), "Nguyễn Vũ Chiến");
 					assertEquals(item.getAddress().trim(), "Quảng Ninh");
 					assertEquals(item.getType().trim(), "hộ dân cư");
 					assertEquals(item.getWaterMeterValue(), 8);
 					assertEquals(item.getPrice(), 503200.0);
 				}
-				if(item.getId() == 4) {
+				if (item.getId() == 4) {
 					assertEquals(item.getFullname().trim(), "Nguyễn Thành Chung");
 					assertEquals(item.getAddress().trim(), "Hưng Yên");
 					assertEquals(item.getType().trim(), "hộ dân cư");

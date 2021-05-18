@@ -9,6 +9,8 @@ import model.Employee;
 
 public class EmployeeDAO extends DAO {
 
+	private final Connection connection = getConnection();
+	
 	private static final String INSERT_EMPLOYEE = "INSERT INTO `tblemployee` "
 			+ "(`id`, `username`, `password`, `fullname`, `address`, `phonenumber`, `position`) "
 			+ "VALUES (NULL, ?, ?, ?, ?, ?, ?);";
@@ -19,7 +21,6 @@ public class EmployeeDAO extends DAO {
 
 	public boolean checkSignup(Employee employee) throws SQLException {
 		try {	
-			Connection connection = getConnection();
 			// try-with-resource statement will auto close the connection.
 			// Check if username is duplicate or not
 			PreparedStatement preparedStatement = connection.prepareStatement(GET_EMPLOYEE_BY_USERNAME);
@@ -47,7 +48,6 @@ public class EmployeeDAO extends DAO {
 
 	public Employee checkSignin(Employee employee) throws SQLException {
 		try {
-			Connection connection = getConnection();
 			// Check if username is duplicate or not
 			PreparedStatement preparedStatement = connection.prepareStatement(GET_EMPLOYEE_BY_USERNAME_AND_PASSWORD);
 			preparedStatement.setString(1, employee.getUsername());
@@ -69,6 +69,10 @@ public class EmployeeDAO extends DAO {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	public Connection getDAOConnection() {
+		return this.connection;
 	}
 	
 }

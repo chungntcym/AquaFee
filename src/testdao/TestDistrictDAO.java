@@ -13,25 +13,23 @@ class TestDistrictDAO {
 
 	@Test
 	void testDistrictsDAOgetAllDistrict() throws Exception {
-		DistrictsDAO 	districtsDAO = new 	DistrictsDAO();
+		DistrictsDAO districtsDAO = new DistrictsDAO();
 		try {
 			ArrayList<Districts> listDistrictsTest = districtsDAO.getAllDistrict();
-			//Test if the returned arraylist is as same as in database
-			for(Districts item : listDistrictsTest) {
-				if(item.getId() == 1) {
+			// Test if the returned arraylist is as same as in database
+			for (Districts item : listDistrictsTest) {
+				if (item.getId() == 1) {
 					assertTrue(item.getName().equals("Hà Đông"));
-				}
-				if(item.getId() == 2) {
+				} else if (item.getId() == 2) {
 					assertTrue(item.getName().equals("Thanh Xuân"));
-				}
-				if(item.getId() == 3) {
+				} else if (item.getId() == 3) {
 					assertTrue(item.getName().equals("Hoàn Kiếm"));
-				}
-				if(item.getId() == 4) {
+				} else if (item.getId() == 4) {
 					assertTrue(item.getName().equals("Hoàng Mai"));
-				}
-				if(item.getId() == 5) {
+				} else if (item.getId() == 5) {
 					assertTrue(item.getName().equals("Ba Đình"));
+				} else {
+					return;
 				}
 			}
 		} catch (SQLException e) {
