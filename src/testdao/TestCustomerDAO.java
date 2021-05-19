@@ -43,7 +43,7 @@ class TestCustomerDAO {
 		}
 	}
 	@Test
-	void testCustomerDAOgetAll() throws Exception {
+	void testCustomerDAOgetAll1() throws Exception {
 		CustomerDAO customerDao = new CustomerDAO();
 		try {
 			String id="1";
@@ -52,18 +52,37 @@ class TestCustomerDAO {
 			assertTrue(listCustomerTest.get(0).getFullname().equals("Trần Ngọc Nam Anh"));
 			assertTrue(listCustomerTest.get(0).getAddress().equals("Số nhà 1 ngõ 12 Đường Chùa Bộc"));
 			assertTrue(listCustomerTest.get(0).getEmail().equals("AnhTN@email.com"));
-			id="2";
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	@Test
+	void testCustomerDAOgetAll2() throws Exception {
+		CustomerDAO customerDao = new CustomerDAO();
+		try {
+			String id="2";
 			ArrayList<Customer> listCustomerTest2 = customerDao.getAll(id);
 			//Test if the returned arraylist is as same as in database
 			assertTrue(listCustomerTest2.get(0).getFullname().equals("Vũ Tuấn Anh"));
 			assertTrue(listCustomerTest2.get(0).getAddress().equals("Bắc Giang"));
-			assertEquals("AnhVT@email.com", listCustomerTest2.get(0).getEmail());
-			id="3";
+			assertTrue(listCustomerTest2.get(0).getEmail().equals("tuananhvubg1999@gmail.com"));
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	@Test
+	void testCustomerDAOgetAll3() throws Exception {
+		CustomerDAO customerDao = new CustomerDAO();
+		try {
+			String id="3";
 			ArrayList<Customer> listCustomerTest3 = customerDao.getAll(id);
 			//Test if the returned arraylist is as same as in database
 			assertTrue(listCustomerTest3.get(0).getFullname().equals("Nguyễn Vũ Chiến"));
 			assertTrue(listCustomerTest3.get(0).getAddress().equals("Quảng Ninh"));
-			assertEquals("ChienNV@email.com", listCustomerTest3.get(0).getEmail());
+			assertTrue(listCustomerTest3.get(0).getEmail().equals("leanhtuanltv1999@gmail.com"));
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
