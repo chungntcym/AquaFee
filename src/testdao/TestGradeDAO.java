@@ -108,19 +108,6 @@ class TestGradeDAO extends DAO {
 			// If pass => both create and read function work normally
 			assertEquals(listGradeTest, listGradeResult);
 
-			// Test 2: save Empty Table
-			listGradeTest = gradeDao.getTableGradeByContractTypeId("1");
-
-			// Fake data
-			ArrayList<Grade> listGradeFakeData = new ArrayList<>();
-			gradeDao.saveGradeTable(listGradeFakeData, 1);
-
-			listGradeResult = gradeDao.getTableGradeByContractTypeId("1");
-
-			// If pass => both create and read function work normally and can handle empty
-			// arraylist in input
-			assertEquals(listGradeTest, listGradeResult);
-
 		} finally {
 			connection.rollback();
 			connection.close();
