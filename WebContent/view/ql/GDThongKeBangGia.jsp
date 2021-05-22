@@ -20,7 +20,6 @@
 		TKGradeDAO dao = new TKGradeDAO();
 		ArrayList<TKGrade> list = new ArrayList<TKGrade>();
 		list = dao.getGradeByyear(year);
-		System.out.print(list);
 	%>
 
 

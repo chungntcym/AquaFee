@@ -13,12 +13,13 @@ public class TKContractDAO extends DAO {
 		super();
 	}
 	
-	private static final String GET_ALL_CONTRACT = "select b.id, b.fullname, b.address, b.phonenumber, b.identityNumber, b.email, a.type from tblcontracttype a, tblcustomer b where b.tblcontractTypeid = a.id;";
-	
-	public ArrayList<TKContract> getAllContract() throws SQLException{
+	private static final String GET_ALL_CONTRACT = "select b.id, b.fullname, b.address, b.phonenumber, b.identityNumber, b.email, a.type from tblcontracttype a join tblcustomer b on b.tblcontractTypeid = a.id where b.tblSubDistrictid = ?;";
+
+	public ArrayList<TKContract> getAllContract(String idPhuong) throws SQLException{
 		try {
 			Connection connection = getConnection();
 			PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_CONTRACT);
+			preparedStatement.setString(1, idPhuong);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			ArrayList<TKContract> listContract = new ArrayList<TKContract>();
 			while(resultSet.next()) {

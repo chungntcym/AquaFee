@@ -17,40 +17,40 @@ class TestTKContractDAO {
 		TKContractDAO tkContractDAO = new TKContractDAO();
 		
 		try {
-			ArrayList<TKContract> listTK = tkContractDAO.getAllContract();
+			ArrayList<TKContract> listTK = tkContractDAO.getAllContract("1");
 			assertTrue(listTK.size() == 4);
 			for (TKContract item: listTK) {
 				if (item.getId() == 1) {
-					assertTrue(item.getFullname().equals("Trần Ngọc Nam Anh"));
-					assertTrue(item.getAddress().equals("Số nhà 1 ngõ 12 Đường Chùa Bộc"));
+					assertTrue(item.getFullname().equals("Tráº§n Ngá»�c Nam Anh"));
+					assertTrue(item.getAddress().equals("Sá»‘ nhÃ  1 ngÃµ 12 Ä�Æ°á»�ng ChÃ¹a Bá»™c"));
 					assertTrue(item.getPhonenumber().equals("0123456789"));
 					assertTrue(item.getIdentityNumber().equals("101355975"));
 					assertTrue(item.getEmail().equals("AnhTN@email.com"));
-					assertTrue(item.getLoaihopdong().equals("hộ dân cư"));
+					assertTrue(item.getLoaihopdong().equals("há»™ dÃ¢n cÆ°"));
 				}
 				if (item.getId() == 2) {
-					assertTrue(item.getFullname().equals("Vũ Tuấn Anh"));
-					assertTrue(item.getAddress().equals("Bắc Giang"));
+					assertTrue(item.getFullname().equals("VÅ© Tuáº¥n Anh"));
+					assertTrue(item.getAddress().equals("Báº¯c Giang"));
 					assertTrue(item.getPhonenumber().equals("0987654321"));
 					assertTrue(item.getIdentityNumber().equals("101369745"));
 					assertTrue(item.getEmail().equals("AnhVT@email.com"));
-					assertTrue(item.getLoaihopdong().equals("hộ nghèo"));
+					assertTrue(item.getLoaihopdong().equals("há»™ nghÃ¨o"));
 				}
 				if (item.getId() == 3) {
-					assertTrue(item.getFullname().equals("Nguyễn Vũ Chiến"));
-					assertTrue(item.getAddress().equals("Quảng Ninh"));
+					assertTrue(item.getFullname().equals("Nguyá»…n VÅ© Chiáº¿n"));
+					assertTrue(item.getAddress().equals("Quáº£ng Ninh"));
 					assertTrue(item.getPhonenumber().equals("0123459876"));
 					assertTrue(item.getIdentityNumber().equals("101323698"));
 					assertTrue(item.getEmail().equals("ChienNV@email.com"));
-					assertTrue(item.getLoaihopdong().equals("hộ dân cư"));
+					assertTrue(item.getLoaihopdong().equals("há»™ dÃ¢n cÆ°"));
 				}
 				if (item.getId() == 4) {
-					assertTrue(item.getFullname().equals("Nguyễn Thành Chung "));
-					assertTrue(item.getAddress().equals("Hưng Yên"));
+					assertTrue(item.getFullname().equals("Nguyá»…n ThÃ nh Chung "));
+					assertTrue(item.getAddress().equals("HÆ°ng YÃªn"));
 					assertTrue(item.getPhonenumber().equals("0987612345"));
 					assertTrue(item.getIdentityNumber().equals("101254795"));
 					assertTrue(item.getEmail().equals("ChungNT@email.com"));
-					assertTrue(item.getLoaihopdong().equals("hộ dân cư"));
+					assertTrue(item.getLoaihopdong().equals("há»™ dÃ¢n cÆ°"));
 				}
 	
 			}

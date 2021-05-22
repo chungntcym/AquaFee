@@ -4,8 +4,9 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList, model.*, dao.*"%>
 <%
+String idPhuong = request.getParameter("id");
 ArrayList<TKContract> listyc = new ArrayList<TKContract>();
-listyc = (new TKContractDAO()).getAllContract();
+listyc = (new TKContractDAO()).getAllContract(idPhuong);
 %>
 <!DOCTYPE html>
 <html lang="vi">

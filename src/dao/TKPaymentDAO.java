@@ -11,8 +11,7 @@ import model.TKPayment;
 public class TKPaymentDAO extends DAO {
 
 	private static final String GET_PAYMENT_STATISTICAL	 = "SELECT * FROM  `tblpayment`, `tblcontracttype`, `tblcustomer` "
-			+ "WHERE tblcontracttype.id = tblcustomer.tblContractTypeid AND tblcustomer.id = tblCustomerid "
-			+ "AND tblpayment.payment_time IS NULL;";
+			+ "WHERE tblcontracttype.id = tblcustomer.tblContractTypeid AND tblcustomer.id = tblCustomerid AND tblpayment.payment_time IS NULL order by price desc;";
 
 	public ArrayList<TKPayment> getPaymentStats() throws SQLException {
 		try {
