@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import model.SubDistrict;
 public class SubDistrictDAO extends DAO{
-	private static final String GET_ALL_SUBDISTRICT = "SELECT * FROM `tblsubdistrict` where id=?;";
+	private static final String GET_ALL_SUBDISTRICT = "SELECT * FROM `tblsubdistrict` where tblDistrictid=?;";
 	
 	public ArrayList<SubDistrict> getAllSubDistrictById(String ID) throws SQLException {
 		try {

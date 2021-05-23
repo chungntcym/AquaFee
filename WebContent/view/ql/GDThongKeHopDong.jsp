@@ -33,6 +33,9 @@ if (listyc != null) {
 
 			<div class="container-fluid">
 				<!-- Code in here -->
+				<%
+				if (listyc.size() != 0) {
+				%>
 				<div class="card mt-3">
 					<div class="card-header d-flex justify-content-between">
 						<span class="navbar-brand mb-0 h1">Thống kê hợp đồng</span>
@@ -58,16 +61,16 @@ if (listyc != null) {
 									%>
 									<tr>
 										<td name="id"><%=listyc.get(i).getId()%></td>
-										<td><%=listyc.get(i).getFullname()%></td>
-										<td><%=listyc.get(i).getAddress()%></td>
-										<td><%=listyc.get(i).getPhonenumber()%></td>
-										<td><%=listyc.get(i).getIdentityNumber()%></td>
-										<td><%=listyc.get(i).getEmail()%></td>
-										<td><%=listyc.get(i).getLoaihopdong()%></td>
+										<td name="FullName"><%=listyc.get(i).getFullname()%></td>
+										<td name="Address"><%=listyc.get(i).getAddress()%></td>
+										<td name="PhoneNumber"><%=listyc.get(i).getPhonenumber()%></td>
+										<td name="IdentityNumber"><%=listyc.get(i).getIdentityNumber()%></td>
+										<td name="Email"><%=listyc.get(i).getEmail()%></td>
+										<td name="LoaiHopDong"><%=listyc.get(i).getLoaihopdong()%></td>
 										<td>
 											<button class="btn btn-info" type="button"
 												data-toggle="tooltip" data-placement="left"
-												title="Xem hoá đơn"
+												title="Xem hoá đơn" id="show-invoice"
 												onclick="location.href='GDHoaDonKhachHang.jsp?id=<%=listyc.get(i).getId()%>';">
 												<i class="fas fa-receipt"></i>
 											</button>
@@ -75,11 +78,17 @@ if (listyc != null) {
 									</tr>
 									<%
 									}
+									} else {
+									%>
+									<h3 id="notification">Không có khách hàng nào tại địa chỉ đã chọn</h3>
+									<%
+									}
 									}
 									%>
 								</tbody>
 							</table>
 							<div class="card-footer d-flex justify-content-end">
+								<p id="total" class="col-sm">Có tổng cộng <%=listyc.size() %> bản ghi</p>
 								<button class="btn btn-outline-secondary px-4" type="button"
 									name="back" onclick="history.back()">Quay lại</button>
 							</div>

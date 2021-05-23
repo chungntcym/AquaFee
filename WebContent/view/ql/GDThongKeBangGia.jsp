@@ -109,7 +109,7 @@
 									}
 									} else {
 									%>
-									<h3>Năm đã chọn chưa cấu hình bảng giá</h3>
+									<h3 id="notification">Năm đã chọn chưa cấu hình bảng giá</h3>
 									<%
 									}
 									}
