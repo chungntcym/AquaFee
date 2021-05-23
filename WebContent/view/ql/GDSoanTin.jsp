@@ -16,7 +16,7 @@
 <%String idCustomer[] = request.getParameterValues("email-check") ;
 for (int j=0;j<idCustomer.length;j++){
 		CustomerDAO customerDAO = new CustomerDAO();
-		ArrayList<Customer> listCustomer = customerDAO.getAll(idCustomer[j]);
+		ArrayList<Customer> listCustomer = customerDAO.getCusByID(idCustomer[j]);
 		session.setAttribute("listCusSend", listCustomer);}
 %>
 
