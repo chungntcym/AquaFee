@@ -12,7 +12,7 @@
 <!--Custom styles-->
 <link rel="stylesheet" href="../vendor/css/main_view.css">
 
-<title>Chon ho dan</title>
+<title>Chọn loại tin cần gửi</title>
 <%String idCustomer[] = request.getParameterValues("email-check") ;
 for (int j=0;j<idCustomer.length;j++){
 		CustomerDAO customerDAO = new CustomerDAO();

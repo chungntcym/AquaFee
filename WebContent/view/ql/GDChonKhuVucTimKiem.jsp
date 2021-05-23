@@ -45,9 +45,10 @@ if (idString != null) {
 					</div>
 					<div class="card-body">
 						<div class="form-group">
-							<label for="address-select">Chọn Quận/Huyện</label> <select
+							<label for="address-select">Chọn Quận/Huyện</label> 
+							<select
 								class="form-control" id="district-select">
-								<option value="default" disabled selected></option>
+								<option value="default"  selected></option>
 								<%
 								if (listDistricts != null) {
 									for (Districts districts : listDistricts) {
@@ -60,9 +61,11 @@ if (idString != null) {
 								}
 								}
 								%>
-							</select> <label for="address-select">Chọn Phường/Xã</label> <select
+							</select> 
+							<label for="address-select">Chọn Phường/Xã</label> 
+							<select
 								class="form-control" id="subdistrict-select">
-								<option value="default" disabled selected></option>
+								<option value="default"  selected></option>
 								<%
 								if (idString != null && listSubDistrict.size() != 0) {
 									for (SubDistrict subdistrict : listSubDistrict) {

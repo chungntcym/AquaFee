@@ -60,7 +60,7 @@ session.setAttribute("idAu", idAu);
 									<div class="card-body">
 										<div class="d-flex flex-row">
 											<div class="form-group">
-												<input class="form-control" type="time" id="appt" name="cuttime" value="00:00" required>
+												<input class="form-control" type="time" id="timein" name="cuttime" value="00:00" required>
 											</div>
 											<div class="form-group">
 												<input class="form-control" type="date" id="date-input" name="cutday">
@@ -74,10 +74,10 @@ session.setAttribute("idAu", idAu);
 									<div class="card-body">
 										<div class="d-flex flex-row">
 											<div class="form-group">
-												<input class="form-control" type="time" id="appt" name="ontime" value="00:00" required>
+												<input class="form-control" type="time" id="timeout" name="ontime" value="00:00" required>
 											</div>
 											<div class="form-group">
-												<input class="form-control" type="date" id="date-input" name="onday">
+												<input class="form-control" type="date" id="date-output" name="onday">
 												
 											</div>
 
@@ -101,43 +101,6 @@ session.setAttribute("idAu", idAu);
 	<!-- /#wrapper -->
 
 	<!-- Dup value modal -->
-	<script type="text/javascript">
-		$(function() {
-			$('#select-type').bind('change', function() {
-				var url = $(this).val(); // get selected value
-				alert(url); // This will help to check whether JS is getting executed.
-				if (url) { // require a URL
-					window.location = url; // redirect
-				}
-				return false;
-			});
-		});
-
-		$("#grade-table").on('click', '.btnCheck', function() {
-			
-		});
-		document.getElementById("check-all").onclick = function () 
-        {
-            // Lấy danh sách checkbox
-            var checkboxes = document.getElementsByName('email-check');
-
-            // Lặp và thiết lập checked
-            for (var i = 0; i < checkboxes.length; i++){
-                checkboxes[i].checked = true;
-            }
-        };
-
-        // Chức năng bỏ chọn hết
-        document.getElementById("un-check-all").onclick = function () 
-        {
-            // Lấy danh sách checkbox
-            var checkboxes = document.getElementsByName('email-check');
-
-            // Lặp và thiết lập Uncheck
-            for (var i = 0; i < checkboxes.length; i++){
-                checkboxes[i].checked = false;
-            }
-        };
-	</script>
+	
 </body>
 </html>

@@ -11,7 +11,7 @@
 <jsp:include page="../include.jsp" />
 <!--Custom styles-->
 <link rel="stylesheet" href="../vendor/css/main_view.css">
-<title>Chon ho dan</title>
+<title>Chọn hộ dân</title>
 <%
 String idString = request.getParameter("id");
 int id = 0;
@@ -91,7 +91,7 @@ ArrayList<Customer> listCustomer = customerDAO.getCusByID(String.valueOf(id));
 							</table>
 						</div>
 						<div class="card-footer d-flex justify-content-end">
-							<button class="btn btn-outline-secondary px-3 mx-2" type="submit">Soạn
+							<button class="btn btn-outline-secondary px-3 mx-2" type="submit" id="soantin">Soạn
 								tin</button>
 							<button class="btn btn-outline-secondary px-3" type="button"
 								name="back" onclick="history.back()">Quay lại</button>
