@@ -21,7 +21,7 @@ class TestCustomerDAO {
 	void testCustomerDAOgetAddress() throws Exception {
 		CustomerDAO customerDao = new CustomerDAO();
 		try {
-			ArrayList<Customer> listCustomerTest = customerDao.getAddress();
+			ArrayList<Customer> listCustomerTest = customerDao.getAllCus();
 			//Test if the returned arraylist is as same as in database
 			for(Customer item : listCustomerTest) {
 				if(item.getId() == 1) {
@@ -47,7 +47,7 @@ class TestCustomerDAO {
 		CustomerDAO customerDao = new CustomerDAO();
 		try {
 			String id="1";
-			ArrayList<Customer> listCustomerTest = customerDao.getAll(id);
+			ArrayList<Customer> listCustomerTest = customerDao.getCusByID(id);
 			//Test if the returned arraylist is as same as in database
 			assertTrue(listCustomerTest.get(0).getFullname().equals("Trần Ngọc Nam Anh"));
 			assertTrue(listCustomerTest.get(0).getAddress().equals("Số nhà 1 ngõ 12 Đường Chùa Bộc"));
@@ -62,7 +62,7 @@ class TestCustomerDAO {
 		CustomerDAO customerDao = new CustomerDAO();
 		try {
 			String id="2";
-			ArrayList<Customer> listCustomerTest2 = customerDao.getAll(id);
+			ArrayList<Customer> listCustomerTest2 = customerDao.getCusByID(id);
 			//Test if the returned arraylist is as same as in database
 			assertTrue(listCustomerTest2.get(0).getFullname().equals("Vũ Tuấn Anh"));
 			assertTrue(listCustomerTest2.get(0).getAddress().equals("Bắc Giang"));
@@ -78,7 +78,7 @@ class TestCustomerDAO {
 		CustomerDAO customerDao = new CustomerDAO();
 		try {
 			String id="3";
-			ArrayList<Customer> listCustomerTest3 = customerDao.getAll(id);
+			ArrayList<Customer> listCustomerTest3 = customerDao.getCusByID(id);
 			//Test if the returned arraylist is as same as in database
 			assertTrue(listCustomerTest3.get(0).getFullname().equals("Nguyễn Vũ Chiến"));
 			assertTrue(listCustomerTest3.get(0).getAddress().equals("Quảng Ninh"));

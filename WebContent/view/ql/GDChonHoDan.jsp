@@ -31,7 +31,7 @@ for (SubDistrict ct : listSubdistrict) {
 	}
 }
 CustomerDAO customerDAO = new CustomerDAO();
-ArrayList<Customer> listCustomer = customerDAO.getAll(String.valueOf(id));
+ArrayList<Customer> listCustomer = customerDAO.getCusByID(String.valueOf(id));
 %>
 </head>
 

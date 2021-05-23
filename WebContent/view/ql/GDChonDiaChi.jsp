@@ -21,7 +21,7 @@ String idString = request.getParameter("id");
 
 if (idString != null) {
 	SubDistrictDAO subdistrictDAO = new SubDistrictDAO();
-	listSubDistrict = subdistrictDAO.getAllSubDistrictById(idString);
+	listSubDistrict = subdistrictDAO.getAllSubDistrictByDistrictId(idString);
 	session.setAttribute("listSubDistrict", listSubDistrict);
 }
 %>

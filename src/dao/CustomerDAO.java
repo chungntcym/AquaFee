@@ -9,11 +9,11 @@ import model.Customer;
 
 public class CustomerDAO extends DAO{
 	private final Connection connection = getConnection();
-	private static final String GET_ALL_ADDRESS = "SELECT * FROM `tblcustomer`;";
-	public ArrayList<Customer> getAddress() throws SQLException {
+	private static final String GET_ALL_CUS = "SELECT * FROM `tblcustomer`;";
+	public ArrayList<Customer> getAllCus() throws SQLException {
 		try {
 			// try-with-resource statement will auto close the connection.
-			PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_ADDRESS);
+			PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_CUS);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			ArrayList<Customer> listCustomer = new ArrayList<>();
 			while (resultSet.next()) {
@@ -30,11 +30,11 @@ public class CustomerDAO extends DAO{
 			return null;
 		}
 	}
-	private static final String GET_ALL_BY_ID = "SELECT * FROM `tblcustomer` Where id=?;";
-	public ArrayList<Customer> getAll(String ID) throws SQLException {
+	private static final String GET_CUS_BY_ID = "SELECT * FROM `tblcustomer` Where id=?;";
+	public ArrayList<Customer> getCusByID(String ID) throws SQLException {
 		try {
 			// try-with-resource statement will auto close the connection.
-			PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_BY_ID);
+			PreparedStatement preparedStatement = connection.prepareStatement(GET_CUS_BY_ID);
 			preparedStatement.setString(1, ID);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			ArrayList<Customer> listCustomer = new ArrayList<>();

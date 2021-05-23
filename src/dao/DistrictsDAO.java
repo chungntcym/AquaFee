@@ -6,12 +6,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Districts;
 public class DistrictsDAO extends DAO {
-	private static final String GET_ALL_ADDRESS = "SELECT * FROM `tbldistrict`;";
+	private static final String GET_ALL_DISTRICT = "SELECT * FROM `tbldistrict`;";
 	public ArrayList<Districts> getAllDistrict() throws SQLException {
 		try {
 			Connection connection = getConnection();
 			// try-with-resource statement will auto close the connection.
-			PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_ADDRESS);
+			PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_DISTRICT);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			ArrayList<Districts> listDistricts = new ArrayList<>();
 			while (resultSet.next()) {

@@ -8,7 +8,7 @@ import model.SubDistrict;
 public class SubDistrictDAO extends DAO{
 	private static final String GET_ALL_SUBDISTRICT = "SELECT * FROM `tblsubdistrict` where tblDistrictid=?;";
 	
-	public ArrayList<SubDistrict> getAllSubDistrictById(String ID) throws SQLException {
+	public ArrayList<SubDistrict> getAllSubDistrictByDistrictId(String ID) throws SQLException {
 		try {
 			Connection connection = getConnection();
 			// try-with-resource statement will auto close the connection.

@@ -17,7 +17,7 @@ class TestSubDistrictDAO {
 		SubDistrictDAO 	subDistrictDAO = new 	SubDistrictDAO();
 		try {
 			String id="1";
-			ArrayList<SubDistrict> listSubDistrictsTest1 = 	subDistrictDAO.getAllSubDistrictById(id);
+			ArrayList<SubDistrict> listSubDistrictsTest1 = 	subDistrictDAO.getAllSubDistrictByDistrictId(id);
 			//Test if the returned arraylist is as same as in database
 			System.out.print(listSubDistrictsTest1.get(0).getName());
 			assertTrue(listSubDistrictsTest1.get(0).getName().equals("Mộ Lao"));
@@ -32,7 +32,7 @@ class TestSubDistrictDAO {
 		SubDistrictDAO 	subDistrictDAO = new 	SubDistrictDAO();
 		try {
 			String id="2";
-			ArrayList<SubDistrict> listSubDistrictsTest2 = 	subDistrictDAO.getAllSubDistrictById(id);
+			ArrayList<SubDistrict> listSubDistrictsTest2 = 	subDistrictDAO.getAllSubDistrictByDistrictId(id);
 			assertTrue(listSubDistrictsTest2.get(0).getName().equals("Hạ Đình"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -44,7 +44,7 @@ class TestSubDistrictDAO {
 		SubDistrictDAO 	subDistrictDAO = new 	SubDistrictDAO();
 		try {
 			String id="3";
-			ArrayList<SubDistrict> listSubDistrictsTest3 = 	subDistrictDAO.getAllSubDistrictById(id);
+			ArrayList<SubDistrict> listSubDistrictsTest3 = 	subDistrictDAO.getAllSubDistrictByDistrictId(id);
 			assertTrue(listSubDistrictsTest3.get(0).getName().equals("Định Công"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -56,7 +56,7 @@ class TestSubDistrictDAO {
 		SubDistrictDAO 	subDistrictDAO = new 	SubDistrictDAO();
 		try {
 			String id="4";
-			ArrayList<SubDistrict> listSubDistrictsTest4 = 	subDistrictDAO.getAllSubDistrictById(id);
+			ArrayList<SubDistrict> listSubDistrictsTest4 = 	subDistrictDAO.getAllSubDistrictByDistrictId(id);
 			assertTrue(listSubDistrictsTest4.get(0).getName().equals("Cửa Đông"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

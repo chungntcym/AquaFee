@@ -32,7 +32,7 @@ for (Districts ct : listDistricts) {
 }
 SubDistrictDAO subdistrictDAO = new SubDistrictDAO();
 ArrayList<SubDistrict> listSubDistrict = new ArrayList<SubDistrict>(); 
-listSubDistrict = subdistrictDAO.getAllSubDistrictById(String.valueOf(id));
+listSubDistrict = subdistrictDAO.getAllSubDistrictByDistrictId(String.valueOf(id));
 session.setAttribute("listSubDistrict", listSubDistrict); 
 %>
 </head>
